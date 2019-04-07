@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" xmlns:app="http://schemas.android.com/apk/res-auto"
+            tools:context=".BlankFragment">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp"
+            android:background="#fff"
+            android:orientation="vertical">
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#f44336"
+
+                android:id="@+id/election_title"
+                android:gravity="center_horizontal"
+                android:text="Election: Parliament"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+
+                android:layout_marginBottom="5dp"
+                android:textColor="#fff"
+                android:textSize="16dp" />
+
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp">
+            <RelativeLayout android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+                <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                           android:id="@+id/description_icon"
+                           android:layout_marginTop="10dp"
+                           app:srcCompat="@drawable/ic_message_black_24dp"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:textColor="#000"
+                          android:layout_marginLeft="10dp"
+                          android:id="@+id/description_title"
+                          android:layout_toRightOf="@+id/description_icon"
+
+                          android:layout_marginTop="10dp"
+                          android:text="DESCRIPTION"/>
+
+
+                <TextView
+                        android:layout_width="match_parent"
+                        android:layout_toRightOf="@+id/description_icon"
+                        android:layout_below="@+id/description_title"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+
+                        android:layout_height="wrap_content"
+                        android:id="@+id/description"
+
+
+
+                        android:text="We are organizing an election which has this description lorem ipsum lorem ipsum lorem ipsum"
+                        android:textColor="#555" />
+                <TextView android:layout_width="match_parent"
+                          android:layout_height="1dp"
+                          android:id="@+id/devider"
+
+                          android:layout_marginTop="10dp"
+                          android:layout_marginBottom="10dp"
+
+                          android:background="#C9C9C9"
+                          android:layout_below="@+id/description"
+                          android:textColor="#555"
+                />
+            </RelativeLayout>
+        </LinearLayout>
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                      android:layout_marginTop="5dp"
+
+                      android:orientation="vertical">
+            <RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                           android:layout_marginLeft="20dp"
+                           app:srcCompat="@drawable/ic_people_black_24dp"
+                           android:id="@+id/candidate_icon"
+                />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:text="CANDIDATES"
+                          android:layout_marginLeft="10dp"
+                          android:layout_toRightOf="@+id/candidate_icon"
+                          android:layout_marginRight="20dp"
+                          android:id="@+id/candidate_title"
+
+                          android:textColor="#000"
+                          android:textSize="14dp"/>
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:paddingLeft="10dp"
+                          android:paddingTop="5dp"
+                          android:layout_below="@+id/candidate_title"
+                          android:layout_toRightOf="@id/candidate_icon"
+                          android:textColor="#555"
+                          android:layout_marginBottom="10dp"
+                          android:paddingRight="20dp"
+                          android:text="candidate1"
+                          android:id="@+id/candidates"/>
+                <TextView android:layout_width="match_parent"
+                          android:layout_height="1dp"
+                          android:id="@+id/devider2"
+
+                          android:layout_marginBottom="10dp"
+                          android:layout_marginLeft="20dp"
+                          android:layout_marginRight="20dp"
+                          android:background="#C9C9C9"
+                          android:layout_below="@+id/candidates"
+                          android:textColor="#555"
+                />
+            </RelativeLayout>
+            <RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                           android:layout_marginLeft="20dp"
+                           app:srcCompat="@drawable/ic_code_green_24dp"
+                           android:id="@+id/voting_algo"
+                />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:text="VOTING ALGORITHM"
+                          android:layout_marginLeft="10dp"
+                          android:layout_toRightOf="@+id/voting_algo"
+                          android:layout_marginRight="20dp"
+                          android:id="@+id/voting_algorithm"
+
+                          android:textColor="#000"
+                          android:textSize="14dp"/>
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:paddingLeft="10dp"
+                          android:paddingTop="5dp"
+                          android:layout_below="@+id/voting_algorithm"
+                          android:layout_toRightOf="@id/voting_algo"
+                          android:textColor="#555"
+                          android:layout_marginBottom="10dp"
+                          android:paddingRight="20dp"
+                          android:text="Borda"
+                          android:id="@+id/name_algo"/>
+                <TextView android:layout_width="match_parent"
+                          android:layout_height="1dp"
+                          android:id="@+id/devider3"
+
+                          android:layout_marginBottom="10dp"
+                          android:layout_marginLeft="20dp"
+                          android:layout_marginRight="20dp"
+                          android:background="#C9C9C9"
+                          android:layout_below="@+id/name_algo"
+                          android:textColor="#555"
+                />
+            </RelativeLayout>
+        </LinearLayout>
+        <LinearLayout
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_height="wrap_content">
+            <RelativeLayout android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                <LinearLayout android:layout_width="wrap_content"
+                              android:layout_marginLeft="20dp"
+
+                              android:id="@+id/layout1"
+
+                              android:layout_marginRight="20dp"
+                              android:orientation="horizontal"
+                              android:layout_height="wrap_content">
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/start"
+                            android:textSize="12dp"
+                            android:textColor="#000" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                              android:layout_gravity="center_vertical"
+                              android:textSize="12dp"
+                              android:layout_marginLeft="10dp"
+                              android:id="@+id/start_time"
+
+                              android:text="3/16/2019 9:14:26 PM"/>
+
+
+                </LinearLayout>
+                <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                              android:orientation="horizontal"
+                              android:layout_below="@+id/layout1"
+                              android:id="@+id/layout2"
+
+                              android:layout_marginRight="20dp"
+                              android:layout_marginTop="10dp"
+                              android:layout_marginLeft="20dp"
+
+                >
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/status"
+                            android:textSize="12dp"
+                            android:textAlignment="center"
+
+
+
+
+                            android:textColor="#000" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                              android:layout_gravity="center_vertical"
+                              android:id="@+id/status"
+                              android:textSize="12dp"
+                              android:layout_marginLeft="10dp"
+                              android:text="ACTIVE"/>
+                </LinearLayout>
+                <LinearLayout android:layout_width="wrap_content"
+                              android:layout_marginRight="20dp"
+                              android:layout_marginLeft="20dp"
+                              android:id="@+id/layout3"
+
+                              android:layout_below="@+id/layout2"
+                              android:layout_marginTop="10dp"
+                              android:layout_height="wrap_content" android:orientation="horizontal">
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="#000"
+                            android:textSize="12dp"
+
+                            android:textAlignment="center"
+                            android:id="@+id/btn_finish"
+                            android:text="@string/finish"
+                    />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                              android:layout_gravity="center"
+                              android:id="@+id/end_time"
+                              android:textSize="12dp"
+                              android:layout_marginLeft="10dp"
+
+                              android:text="1/31/2100 6:30:00 PM"/>
+
+
+                </LinearLayout>
+            </RelativeLayout>
+        </LinearLayout>
+        <RelativeLayout android:layout_width="match_parent"
+                        android:layout_marginTop="16dp" android:layout_height="wrap_content"
+
+        >
+            <RelativeLayout android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerInParent="true">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:textColor="#555"
+                          android:textSize="10dp"
+                          android:layout_centerVertical="true"
+                          android:layout_alignParentLeft="true"
+                          android:layout_marginLeft="24dp"
+                          android:id="@+id/edit"
+                          android:layout_marginBottom="14dp"
+                          android:layout_marginRight="24dp"
+                          android:drawableTop="@drawable/ic_settings_black_24dp"
+                          android:text="EDIT"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:textColor="#555"
+                          android:textSize="10dp"
+                          android:id="@+id/view"
+                          android:layout_centerInParent="true"
+
+                          android:layout_marginBottom="14dp"
+
+                          android:drawableTop="@drawable/ic_remove_red_eye_black_24dp"
+                          android:text="VIEW"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:textColor="#555"
+                          android:textSize="10dp"
+                          android:id="@+id/delete"
+                          android:layout_centerVertical="true"
+                          android:layout_marginRight="24dp"
+                          android:layout_alignParentRight="true"
+
+                          android:layout_marginBottom="14dp"
+
+                          android:drawableTop="@drawable/ic_delete_black_24dp"
+                          android:text="DELETE"/>
+
+
+
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+    </LinearLayout>
+
+</ScrollView>

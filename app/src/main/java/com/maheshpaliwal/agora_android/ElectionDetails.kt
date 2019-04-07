@@ -21,10 +21,10 @@ class ElectionDetails : Fragment() {
         var tabLayout: TabLayout? = view!!.findViewById<TabLayout>(R.id.tabLayout)
         var viewPager: ViewPager?=view!!.findViewById<ViewPager>(R.id.viewPager)
 
-        tabLayout!!.addTab(tabLayout!!.newTab().setText("ALL"))
-        tabLayout!!.addTab(tabLayout!!.newTab().setText("PENDING"))
-        tabLayout!!.addTab(tabLayout!!.newTab().setText("ACTIVE"))
-        tabLayout!!.addTab(tabLayout!!.newTab().setText("FINISHED"))
+        tabLayout!!.addTab(tabLayout!!.newTab().setText("BASIC"))
+        tabLayout!!.addTab(tabLayout!!.newTab().setText("VOTERS"))
+        tabLayout!!.addTab(tabLayout!!.newTab().setText("BALLOTS"))
+        tabLayout!!.addTab(tabLayout!!.newTab().setText("RESULTS"))
         tabLayout!!.tabGravity = TabLayout.GRAVITY_CENTER
 
 

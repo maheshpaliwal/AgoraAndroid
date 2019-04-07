@@ -11,12 +11,8 @@ class ElectionDetailsAdapter(private val myContext: ElectionDetails, fm: Fragmen
     override fun getItem(position: Int): Fragment? {
         when (position) {
             0 -> {
-                val fragment= fragment_all()
-                val args = Bundle()
+                val fragment= fragment_basic()
 
-                args.putString("TOKEN_AGORA",token)
-
-                fragment.arguments= args
 
 
 

@@ -82,7 +82,7 @@
 
     </RelativeLayout>
     <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="10dp"
                     android:background="#fff"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp">
@@ -155,6 +155,80 @@
 
 
     </RelativeLayout>
+        <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:background="#fff"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp">
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                      android:id="@+id/election_title3"
+                      android:text="Election: Score Ballot"
+                      android:textSize="18dp"
+                      android:textAlignment="center"
+                      android:padding="5dp"
+
+                      android:textColor="#fff"
+                      android:background="#f44336"
+            />
+            <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                       android:layout_marginTop="15dp"
+                       android:id="@+id/description_icon3"
+                       android:layout_marginLeft="5dp"
+                       app:srcCompat="@drawable/ic_message_black_24dp"
+                       android:layout_below="@+id/election_title3"
+            />
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:text="DESCRIPTION"
+                      android:layout_toRightOf="@+id/description_icon3"
+
+                      android:id="@+id/description3"
+                      android:textColor="#000"
+
+                      android:layout_marginTop="15dp"
+                      android:layout_marginLeft="10dp"
+
+                      android:layout_below="@+id/election_title3"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:maxLines="10"
+                      android:layout_below="@+id/description3"
+                      android:textColor="#555"
+                      android:layout_marginTop="10dp"
+                      android:id="@+id/description_text3"
+                      android:layout_marginLeft="10dp"
+                      android:layout_marginRight="10dp"
+                      android:text="This is a demo election to present my ui for agora vote android application"/>
+
+
+            <TextView android:layout_width="match_parent"
+                      android:layout_height="1dp"
+                      android:id="@+id/devider3"
+                      android:layout_marginTop="10dp"
+                      android:layout_marginLeft="8dp"
+                      android:layout_marginRight="8dp"
+                      android:background="#c9c9c9"
+
+                      android:layout_below="@+id/description_text3"
+                      android:textColor="#555"
+            />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:layout_alignParentRight="true"
+                      android:textColor="#00843d"
+                      android:textSize="14dp"
+                      android:id="@+id/cast_vote3"
+                      android:layout_marginTop="10dp"
+                      android:paddingBottom="5dp"
+                      android:textStyle="bold"
+                      android:layout_below="@+id/devider3"
+                      android:layout_marginRight="20dp"
+                      android:layout_marginBottom="10dp"
+                      android:text="CAST VOTE"/>
+
+
+
+
+
+        </RelativeLayout>
     </LinearLayout>
 
 

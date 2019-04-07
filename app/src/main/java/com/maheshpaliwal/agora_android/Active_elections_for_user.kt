@@ -21,6 +21,7 @@ class Active_elections_for_user : Fragment() {
 
         val button_cast: TextView= this.cast_vote
         val button_range:TextView=this.cast_vote2
+        val button_score:TextView=this.cast_vote3
         button_cast.setOnClickListener{
              /* Calling cast vote */
             val fragment = Cast_vote()
@@ -34,6 +35,16 @@ class Active_elections_for_user : Fragment() {
         }
         button_range.setOnClickListener{
             val fragment = range_seekbar()
+            val fragmentManager = activity!!.supportFragmentManager
+            val fragmentTransaction = fragmentManager.beginTransaction()
+            fragmentTransaction.replace(R.id.fragmentholder, fragment)
+            fragmentTransaction.addToBackStack(null)
+            fragmentTransaction.commit()
+
+
+        }
+        button_score.setOnClickListener{
+            val fragment = score_voting()
             val fragmentManager = activity!!.supportFragmentManager
             val fragmentTransaction = fragmentManager.beginTransaction()
             fragmentTransaction.replace(R.id.fragmentholder, fragment)

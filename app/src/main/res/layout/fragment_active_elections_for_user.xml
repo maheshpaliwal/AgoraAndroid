@@ -4,8 +4,10 @@
              android:layout_width="match_parent"
              android:layout_height="match_parent"
              android:background="@drawable/gradient"
+            android:layout_marginBottom="50dp"
              tools:context=".Active_elections_for_user">
-    <LinearLayout android:layout_width="match_parent" android:orientation="vertical" android:layout_height="wrap_content">
+    <LinearLayout android:layout_width="match_parent"
+                  android:paddingBottom="30dp" android:orientation="vertical" android:layout_height="wrap_content">
 
     <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content"
     android:layout_marginTop="20dp"

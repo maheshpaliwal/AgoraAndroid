@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:background="@drawable/gradient"
+             tools:context=".fragment_pending">
+    <RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <android.support.v7.widget.RecyclerView android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:id="@+id/recycler_view"
+
+
+
+                                            android:paddingBottom="50dp"
+    />
+    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+              android:visibility="gone"
+              android:id="@+id/emptyView"
+              android:background="#fff"
+              android:textSize="16dp"
+              android:textColor="#000"
+              android:text="No DATA Available"
+    />
+    </RelativeLayout>
+</ScrollView>

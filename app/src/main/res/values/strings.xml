@@ -1,0 +1,91 @@
+<resources>
+    <string name="app_name">Agora</string>
+    <string name="title_activity_main_app">MainActivityApp</string>
+
+
+    <string name="facebook_app_id">313211982646605</string>
+    <string name="fb_login_protocol_scheme">fb313211982646605</string>
+
+    <string name="title_dashboard">DASHBOARD</string>
+    <string name="title_about">ABOUT</string>
+    <string name="title_help">HELP</string>
+    <string name="title_profile">PROFILE</string>
+    <string name="title_create">CREATE</string>
+    <string name="title_logout">LOGOUT</string>
+    <string name="title_election">ELECTIONS</string>
+    <string name="all_fragment">ALL</string>
+    <string name="pending_fragment">PENDING</string>
+    <string name="active_fragment">ACTIVE</string>
+    <string name="finish_fragment">FINISHED</string>
+    <string name="cast_vote">CAST VOTE</string>
+    <string name="start">
+        <b>START</b>
+    </string>
+    <string name="status">
+        <b>STATUS</b>
+    </string>
+    <string name="finish">
+        <b>FINISH</b>
+    </string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="select_algo">Select Voting Algorithm</string>
+    <string name="ballot">How Secret Are Ballot</string>
+    <string-array name="voting_algorithms">
+        <item>oklahoma</item>
+        <item>RangeVoting</item>
+        <item>RankedPairs</item>
+        <item>Satisfaction Approval Voting</item>
+        <item>Sequential Approval Proportional</item>
+        <item>SmithSet</item>
+        <item>Approval</item>
+        <item>Exhaustive ballot</item>
+        <item>Baldwin</item>
+        <item>Exhaustive ballot with dropoff</item>
+        <item>uncovered set</item>
+        <item>copeland</item>
+        <item>Minimax Condorcet</item>
+        <item>Random Ballot</item>
+        <item>Borda</item>
+        <item>Kemeny Young</item>
+        <item>Nanson</item>
+        <item>Instant Runoff 2-round</item>
+        <item>Contingent Method</item>
+
+
+    </string-array>
+    <string-array name="ballot_privacy">
+        <item>Ballots are completely secret and never shown to anyone</item>
+        <item>Ballots are visible only to me</item>
+        <item>ballots are visible to everyone with election</item>
+
+
+    </string-array>
+
+    <string name="title_activity_welcome">Home Screen</string>
+    <string name="next">NEXT</string>
+    <string name="skip">SKIP</string>
+    <string name="gotit">GOT IT</string>
+
+    <string name="slide_1_title">Create Election!</string>
+    <string name="slide_1_desc">You can Create elections Here on your fingertips!</string>
+
+    <string name="slide_2_title">Cast Your vote</string>
+    <string name="slide_2_desc">Casting vote becomes easier . Cast vote on elections created for you!</string>
+
+    <string name="slide_3_title">Notifications</string>
+    <string name="slide_3_desc">You will get notifications of live voting!</string>
+
+    <string name="slide_4_title">Manage Elections</string>
+    <string name="slide_4_desc">Managing elections become easier !</string>
+
+
+</resources>

@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+          android:background="@drawable/gradient"
+            android:layout_marginBottom="50dp"
+             tools:context=".FragmentDashboard">
+
+
+
+
+<RelativeLayout android:layout_width="match_parent" android:layout_marginTop="20dp"
+                android:scrollbars="vertical"
+
+                android:padding="10dp"
+
+
+                android:layout_height="match_parent">
+    <com.facebook.shimmer.ShimmerFrameLayout android:layout_width="match_parent"
+                                             android:id="@+id/shimemer_view_container"
+                                             android:layout_height="match_parent">
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+            <include layout="@layout/animated_layout" />
+
+            <include layout="@layout/animated_layout" />
+
+            <include layout="@layout/animated_layout" />
+
+        </LinearLayout>
+
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
+
+         <RelativeLayout android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:background="@drawable/background2"
+                         android:id="@+id/realative1"
+                         android:layout_below="@+id/shimemer_view_container"
+                         android:layout_marginLeft="10dp"
+                         android:layout_marginTop="15dp"
+                         android:layout_marginRight="10dp"
+
+
+                         android:padding="10dp"
+         >
+
+             <ImageView android:layout_width="35dp" android:layout_height="35dp"
+                        android:adjustViewBounds="true"
+                        android:scaleType="centerCrop"
+
+
+
+
+
+
+                        android:id="@+id/bubble_chart"
+                        app:srcCompat="@drawable/ic_bubble_chart_black_24dp"/>
+
+             <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+         android:text="Total Elections"
+
+                       android:layout_alignParentRight="true"
+
+                   android:textColor="#6c757d"
+
+                   android:id="@+id/total_elections"
+         android:layout_marginLeft="15dp"/>
+         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+         android:layout_below="@+id/total_elections"
+
+                   android:layout_alignEnd="@+id/total_elections"
+                   android:layout_marginTop="2dp"
+                   android:layout_alignParentRight="true"
+
+                   android:id="@+id/count"
+                   android:textSize="16dip"
+         android:text="2"
+         android:textColor="#000"
+                   android:layout_alignRight="@+id/total_elections"/>
+         <TextView android:layout_width="fill_parent" android:layout_height="1dp"
+                   android:layout_marginTop="7dp"
+                   android:layout_marginBottom="5dp"
+                   android:id="@+id/divider"
+
+                   android:layout_below="@+id/bubble_chart"
+         android:background="#C9C9C9"/>
+             <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:layout_below="@+id/divider" android:id="@+id/icon_yellow"
+                        app:srcCompat="@drawable/ic_bubble_5"/>
+
+
+             <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+             android:layout_below="@+id/divider"
+                       android:layout_marginLeft="5dp"
+                       android:layout_toRightOf="@+id/icon_yellow"
+
+                       android:textSize="12dp"
+
+                       android:textColor="#6c757d"
+             android:text="Total Elections"/>
+         </RelativeLayout>
+    <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:background="@drawable/background2"
+                    android:id="@+id/realative2"
+                    android:layout_below="@+id/realative1"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginRight="10dp"
+
+                    android:padding="10dp"
+    >
+        <ImageView android:layout_width="35dp" android:layout_height="35dp"
+
+
+
+
+                   android:id="@+id/bubble_chart2"
+                   app:srcCompat="@drawable/ic_bubble_chart_black2_24dp"/>
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:text="Pending"
+                  android:layout_alignParentRight="true"
+
+
+                  android:textColor="#6c757d"
+
+                  android:id="@+id/total_elections2"
+                  android:layout_marginLeft="15dp"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:layout_below="@+id/total_elections2"
+
+                  android:layout_alignEnd="@+id/total_elections2"
+                  android:layout_marginTop="2dp"
+
+                  android:id="@+id/count2"
+                  android:textSize="16dip"
+                  android:text="1"
+                  android:textColor="#000"
+                  android:layout_alignRight="@+id/total_elections2"/>
+        <TextView android:layout_width="fill_parent" android:layout_height="1dp"
+                  android:layout_marginTop="7dp"
+                  android:layout_marginBottom="5dp"
+                  android:id="@+id/divider2"
+
+                  android:layout_below="@+id/bubble_chart2"
+                  android:background="#C9C9C9"/>
+        <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                   android:layout_below="@+id/divider2" android:id="@+id/icon_yellow2"
+                   app:srcCompat="@drawable/ic_bubble_5"/>
+
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:layout_below="@+id/divider2"
+                  android:layout_toRightOf="@+id/icon_yellow2"
+                  android:layout_marginLeft="5dp"
+                  android:textSize="12dp"
+
+                  android:textColor="#6c757d"
+                  android:text="Total Pending Elections"/>
+    </RelativeLayout>
+    <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:background="@drawable/background2"
+                    android:id="@+id/realative3"
+                    android:layout_below="@+id/realative2"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginRight="10dp"
+
+                    android:padding="10dp"
+    >
+        <ImageView android:layout_width="35dp" android:layout_height="35dp"
+
+
+
+
+                   android:id="@+id/bubble_chart3"
+                   app:srcCompat="@drawable/ic_bubble_chart_3"/>
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:text="Active"
+                  android:layout_alignParentRight="true"
+
+
+                  android:textColor="#6c757d"
+
+                  android:id="@+id/total_elections3"
+                  android:layout_marginLeft="15dp"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:layout_below="@+id/total_elections3"
+
+                  android:layout_alignEnd="@+id/total_elections3"
+                  android:layout_marginTop="2dp"
+
+
+                  android:id="@+id/count3"
+                  android:textSize="16dip"
+                  android:text="1"
+                  android:textColor="#000"
+                  android:layout_alignRight="@+id/total_elections3"/>
+        <TextView android:layout_width="fill_parent" android:layout_height="1dp"
+                  android:layout_marginTop="7dp"
+                  android:layout_marginBottom="5dp"
+                  android:id="@+id/divider3"
+
+                  android:layout_below="@+id/bubble_chart3"
+                  android:background="#C9C9C9"/>
+        <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                   android:layout_below="@+id/divider3" android:id="@+id/icon_yellow3"
+                   app:srcCompat="@drawable/ic_bubble_5"/>
+
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:layout_below="@+id/divider3"
+                  android:layout_toRightOf="@+id/icon_yellow3"
+                  android:layout_marginLeft="5dp"
+
+                  android:textColor="#6c757d"
+                  android:textSize="12dp"
+                  android:text="Total Active Elections"/>
+    </RelativeLayout>
+
+
+
+    <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:background="@drawable/background2"
+                    android:id="@+id/realative4"
+                    android:layout_below="@+id/realative3"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginRight="10dp"
+
+                    android:padding="10dp"
+
+    >
+        <ImageView android:layout_width="35dp" android:layout_height="35dp"
+
+
+
+
+                   android:id="@+id/bubble_chart4"
+                   app:srcCompat="@drawable/ic_bubble_4"/>
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:text="Finished"
+                  android:layout_alignParentRight="true"
+
+                  android:textColor="#6c757d"
+
+                  android:id="@+id/total_elections4"
+                  android:layout_marginLeft="15dp"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:layout_below="@+id/total_elections4"
+
+                  android:layout_alignEnd="@+id/total_elections4"
+                  android:layout_marginTop="2dp"
+
+                  android:id="@+id/count4"
+                  android:textSize="16dip"
+                  android:text="0"
+                  android:textColor="#000"
+                  android:layout_alignRight="@+id/total_elections4"/>
+        <TextView android:layout_width="fill_parent" android:layout_height="1dp"
+                  android:layout_marginTop="7dp"
+                  android:layout_marginBottom="5dp"
+                  android:id="@+id/divider4"
+
+                  android:layout_below="@+id/bubble_chart4"
+                  android:background="#C9C9C9"/>
+        <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                   android:layout_below="@+id/divider4" android:id="@+id/icon_yellow4"
+                   app:srcCompat="@drawable/ic_bubble_5"/>
+
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:layout_below="@+id/divider4"
+                  android:layout_toRightOf="@+id/icon_yellow4"
+                  android:layout_marginLeft="5dp"
+                  android:textSize="12dp"
+                  android:id="@+id/total_finished"
+
+                  android:textColor="#6c757d"
+                  android:text="Total Finished Elections"/>
+    </RelativeLayout>
+
+</RelativeLayout>
+
+</ScrollView>
+

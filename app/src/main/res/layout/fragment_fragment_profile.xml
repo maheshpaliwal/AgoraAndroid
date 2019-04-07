@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+
+             tools:context=".FragmentProfile">
+
+<RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent">
+    <RelativeLayout
+            android:layout_width="match_parent"
+
+            android:id="@+id/realative1"
+            android:layout_height="wrap_content">
+        <LinearLayout
+                android:background="@drawable/background_logo_gradient"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:id="@+id/linear"
+                android:orientation="vertical">
+            <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_marginTop="45dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:id="@+id/profile_pic"
+                    android:src="@drawable/myimg"/>
+            <TextView
+                    android:layout_marginTop="10dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/name"
+                    android:text="Mahesh Paliwal"
+                    android:textColor="#fff"
+
+                    android:textStyle="bold"
+                    android:textSize="16sp"/>
+        </LinearLayout>
+        <LinearLayout
+                android:layout_below="@+id/linear"
+                android:layout_width="360dp"
+
+
+                android:id="@+id/linear2"
+                android:layout_marginLeft="10dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="center"
+                android:layout_marginTop="25dp">
+            <LinearLayout
+
+                    android:orientation="horizontal"
+                    android:paddingLeft="25dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                <ImageView
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        app:srcCompat="@drawable/ic_email_black_24dp"/>
+                <TextView
+                        android:textStyle="bold"
+                        android:id="@+id/email"
+                        android:layout_gravity="center_vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="20dp"
+                        android:text="Email: paliwalmahesh@gmail.com"/>
+            </LinearLayout>
+            <LinearLayout
+                    android:layout_marginTop="25dp"
+                    android:orientation="horizontal"
+                    android:paddingLeft="25dp"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                <ImageView
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        app:srcCompat="@drawable/ic_account_circle_black_24dp"/>
+                <TextView
+                        android:textStyle="bold"
+                        android:id="@+id/user_Name"
+
+                        android:layout_gravity="center_vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="20dp"
+                        android:text="Username: mappie"/>
+            </LinearLayout>
+
+
+        </LinearLayout>
+        <Button
+
+                android:textColor="#fff"
+                android:layout_below="@+id/linear2"
+                android:background="@drawable/button_background"
+                android:layout_marginTop="35dp"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Edit"/>
+
+
+
+    </RelativeLayout>
+
+
+
+
+</RelativeLayout>
+
+</FrameLayout>

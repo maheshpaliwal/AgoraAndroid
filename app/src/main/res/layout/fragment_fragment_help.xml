@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:background="@drawable/background"
+            android:layout_marginBottom="50dp"
+            android:layout_height="match_parent" xmlns:app="http://schemas.android.com/apk/res-auto"
+            tools:context=".FragmentHelp">
+
+
+
+    <RelativeLayout android:layout_width="match_parent" android:layout_marginTop="30dp"
+                    android:scrollbars="vertical"
+                    android:padding="10dp"
+
+
+                    android:layout_height="match_parent">
+
+
+        <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:background="@drawable/background2"
+
+                        android:id="@+id/realative1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="10dp"
+
+
+                        android:padding="10dp"
+        >
+
+            <ImageView android:layout_width="40dp" android:layout_height="40dp"
+
+
+                       android:layout_marginLeft="5dp"
+                       android:background="#ff9800"
+                       android:padding="10dp"
+
+                       android:id="@+id/build"
+                       app:srcCompat="@drawable/ic_build_black_24dp"/>
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:text="HOW TO"
+
+                      android:layout_alignParentRight="true"
+
+                      android:textColor="#6c757d"
+
+                      android:id="@+id/HOWTO1"
+                      android:layout_marginLeft="15dp"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:layout_below="@+id/HOWTO1"
+
+                      android:layout_alignEnd="@+id/HOWTO1"
+
+                      android:layout_alignParentRight="true"
+
+                      android:id="@+id/count"
+                      android:textSize="14dip"
+                      android:text="HOW TO CREATE AN ELECTION"
+                      android:textColor="#000"
+                      android:layout_alignRight="@+id/total_elections"/>
+            <TextView android:layout_width="fill_parent" android:layout_height="1dp"
+                      android:layout_marginTop="7dp"
+                      android:layout_marginBottom="5dp"
+                      android:id="@+id/divider"
+
+                      android:layout_below="@+id/build"
+                      android:background="#C9C9C9"/>
+            <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                       android:layout_below="@+id/divider" android:id="@+id/icon_yellow"
+                       app:srcCompat="@drawable/ic_bubble_5"/>
+
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:layout_below="@+id/divider"
+                      android:layout_marginLeft="5dp"
+                      android:layout_toRightOf="@+id/icon_yellow"
+
+                      android:textSize="12dp"
+
+                      android:textColor="#6c757d"
+                      android:text="Updated 1st November 2018"/>
+        </RelativeLayout>
+        <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:background="@drawable/background2"
+
+                        android:id="@+id/realative2"
+                        android:layout_below="@+id/realative1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="10dp"
+
+
+                        android:padding="10dp"
+        >
+
+            <ImageView android:layout_width="40dp" android:layout_height="40dp"
+
+
+                       android:layout_marginLeft="5dp"
+                       android:background="#4caf50"
+                       android:padding="10dp"
+
+                       android:id="@+id/build2"
+                       app:srcCompat="@drawable/ic_web_asset_black_24dp"/>
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:text="HOW TO"
+
+                      android:layout_alignParentRight="true"
+
+                      android:textColor="#6c757d"
+
+                      android:id="@+id/HOWTO2"
+                      android:layout_marginLeft="15dp"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:layout_below="@+id/HOWTO2"
+
+                      android:layout_alignEnd="@+id/HOWTO2"
+
+                      android:layout_alignParentRight="true"
+
+                      android:id="@+id/count2"
+                      android:textSize="14dip"
+                      android:text="HOW TO VOTE IN AN ELECTION"
+                      android:textColor="#000"
+                      android:layout_alignRight="@+id/total_elections"/>
+            <TextView android:layout_width="fill_parent" android:layout_height="1dp"
+                      android:layout_marginTop="7dp"
+                      android:layout_marginBottom="5dp"
+                      android:id="@+id/divider2"
+
+                      android:layout_below="@+id/build2"
+                      android:background="#C9C9C9"/>
+            <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                       android:layout_below="@+id/divider2" android:id="@+id/icon_yellow2"
+                       app:srcCompat="@drawable/ic_bubble_5"/>
+
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:layout_below="@+id/divider2"
+                      android:layout_marginLeft="5dp"
+                      android:layout_toRightOf="@+id/icon_yellow2"
+
+                      android:textSize="12dp"
+
+                      android:textColor="#6c757d"
+                      android:text="Updated 4st November 2018"/>
+        </RelativeLayout>
+        <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:background="@drawable/background2"
+
+                        android:id="@+id/realative3"
+                        android:layout_below="@+id/realative2"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="10dp"
+
+
+                        android:padding="10dp"
+        >
+
+            <ImageView android:layout_width="40dp" android:layout_height="40dp"
+
+
+                       android:layout_marginLeft="5dp"
+                       android:background="#f44336"
+                       android:padding="10dp"
+
+                       android:id="@+id/build3"
+                       app:srcCompat="@drawable/ic_view_list_black_24dp"/>
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:text="HOW TO"
+
+                      android:layout_alignParentRight="true"
+
+                      android:textColor="#6c757d"
+
+                      android:id="@+id/HOWTO3"
+                      android:layout_marginLeft="15dp"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:layout_below="@+id/HOWTO3"
+
+                      android:layout_alignEnd="@+id/HOWTO3"
+
+                      android:layout_alignParentRight="true"
+
+                      android:id="@+id/count3"
+                      android:textSize="14dip"
+                      android:text="HOW TO VIEW ELECTION RESULTS"
+                      android:textColor="#000"
+                      android:layout_alignRight="@+id/total_elections"/>
+            <TextView android:layout_width="fill_parent" android:layout_height="1dp"
+                      android:layout_marginTop="7dp"
+                      android:layout_marginBottom="5dp"
+                      android:id="@+id/divider3"
+
+                      android:layout_below="@+id/build3"
+                      android:background="#C9C9C9"/>
+            <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                       android:layout_below="@+id/divider3" android:id="@+id/icon_yellow3"
+                       app:srcCompat="@drawable/ic_bubble_5"/>
+
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:layout_below="@+id/divider3"
+                      android:layout_marginLeft="5dp"
+                      android:layout_toRightOf="@+id/icon_yellow3"
+
+                      android:textSize="12dp"
+
+                      android:textColor="#6c757d"
+                      android:text="Updated 4st November 2018"/>
+        </RelativeLayout>
+   </RelativeLayout>
+
+</ScrollView>

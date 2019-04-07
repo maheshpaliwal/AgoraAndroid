@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_marginBottom="50dp"
+            android:background="@drawable/gradient"
+
+            tools:context=".FragmentCreate5">
+    <RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent"
+                    android:layout_marginBottom="30dp"
+    >
+
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="56dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="100dp"
+            android:background="@drawable/background2"
+            android:paddingBottom="20dp"
+            android:paddingLeft="24dp"
+            android:paddingRight="24dp"
+    >
+        <com.kofigyan.stateprogressbar.StateProgressBar
+                android:id="@+id/your_state_progress_bar_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:spb_currentStateNumber="five"
+                android:layout_marginBottom="20dp"
+                app:spb_maxStateNumber="five"
+                app:spb_stateBackgroundColor="#BDBDBD"
+                app:spb_stateForegroundColor="#00843d"
+                app:spb_stateNumberBackgroundColor="#808080"
+                app:spb_stateNumberForegroundColor="#eeeeee"
+                app:spb_currentStateDescriptionColor="#00843d"
+                app:spb_stateDescriptionColor="#808080"
+                app:spb_animateToCurrentProgressState="true"
+                app:spb_checkStateCompleted="true"/>
+
+        <ImageView android:src="@drawable/agora"
+                   android:layout_width="wrap_content"
+                   android:layout_height="72dp"
+                   android:layout_marginBottom="24dp"
+                   android:layout_gravity="center_horizontal" />
+        <CheckBox
+                android:id="@+id/chk1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Get Real Time Results" />
+
+        <CheckBox
+                android:id="@+id/chk2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Invite Voters"
+                android:layout_marginBottom="10dp"
+                 />
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:text="How Secret are the Ballots"
+                  android:textColor="#000"
+                  android:layout_marginBottom="10dp"
+                  android:layout_gravity="center_horizontal"
+        />
+
+        <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:orientation="vertical">
+            <RadioButton android:id="@+id/radio_pirates"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:background="@drawable/text_input_border"
+                         android:drawablePadding="5dp"
+
+
+                         android:maxLines="4"
+
+                         android:text="Ballots are completely secret and never shown to anyone"
+            />
+            <RadioButton android:id="@+id/radio_ninjas"
+                         android:layout_marginTop="5dp"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:text="Ballots are visible only to me"
+
+                         android:background="@drawable/text_input_border"
+            />
+
+            <RadioButton android:id="@+id/radio_ninjas2"
+                         android:layout_marginTop="5dp"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:text="ballots are visible to everyone with election"
+                         android:maxLines="2"
+
+                         android:background="@drawable/text_input_border"
+            />
+        </RadioGroup>
+        <RadioGroup android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:layout_gravity="center_horizontal"
+                      android:layout_marginTop="10dp"
+                      android:textColor="#000"
+                      android:layout_marginBottom="10dp"
+                      android:text="Who can see the list of voters"/>
+            <RadioButton android:id="@+id/radio_ninjas3"
+                         android:layout_marginTop="5dp"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:text="only me"
+
+                         android:background="@drawable/text_input_border"
+            />
+            <RadioButton android:id="@+id/radio_ninjas4"
+                         android:layout_marginTop="5dp"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:text="Everyone with access token"
+
+                         android:background="@drawable/text_input_border"
+            />
+
+
+
+
+
+
+        </RadioGroup>
+
+
+        <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+            <android.support.v7.widget.AppCompatButton
+                    android:id="@+id/btn_prev"
+                    android:layout_alignParentLeft="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/button_background"
+                    android:textColor="#fff"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginRight="40dp"
+                    android:layout_marginTop="20dp"
+
+                    android:text="Prev"/>
+            <android.support.v7.widget.AppCompatButton
+                    android:id="@+id/btn_next"
+                    android:layout_alignParentRight="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/button_background"
+                    android:textColor="#fff"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginRight="40dp"
+                    android:layout_marginTop="20dp"
+
+                    android:text="Finish"/>
+            <RelativeLayout android:layout_width="match_parent"
+                            android:layout_marginTop="20dp" android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"></RelativeLayout>
+            <ProgressBar
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="30dp"
+
+                    android:layout_centerHorizontal="true"
+                    android:visibility="gone"
+                    android:layout_centerInParent="true"
+
+
+
+                    android:id="@+id/progress_bar"
+
+                    android:indeterminateDrawable="@drawable/loader_anim" />
+        </RelativeLayout>
+
+
+
+    </LinearLayout>
+    </RelativeLayout>
+</ScrollView>

@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_marginBottom="50dp"
+            android:background="@drawable/gradient"
+            tools:context=".FragmentCreate4">
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="56dp"
+            android:paddingBottom="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="100dp"
+            android:background="@drawable/background2"
+            android:paddingLeft="24dp"
+            android:paddingRight="24dp"
+    >
+        <com.kofigyan.stateprogressbar.StateProgressBar
+                android:id="@+id/your_state_progress_bar_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:spb_currentStateNumber="four"
+                android:layout_marginBottom="20dp"
+                app:spb_maxStateNumber="five"
+                app:spb_stateBackgroundColor="#BDBDBD"
+                app:spb_stateForegroundColor="#00843d"
+                app:spb_stateNumberBackgroundColor="#808080"
+                app:spb_stateNumberForegroundColor="#eeeeee"
+                app:spb_currentStateDescriptionColor="#00843d"
+                app:spb_stateDescriptionColor="#808080"
+                app:spb_animateToCurrentProgressState="true"
+                app:spb_checkStateCompleted="true"/>
+
+        <ImageView android:src="@drawable/agora"
+                   android:layout_width="wrap_content"
+                   android:layout_height="72dp"
+                   android:layout_marginBottom="24dp"
+                   android:layout_gravity="center_horizontal" />
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:layout_marginBottom="20dp"
+                  android:textSize="14dip"
+                  android:textColor="#000"
+        android:layout_gravity="center_horizontal"
+        android:text="Select Voting Algorithm"/>
+        <Spinner
+                android:id="@+id/spinner1"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries="@array/voting_algorithms"
+                android:prompt="@string/select_algo" />
+       <!-- <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:orientation="vertical">
+            <RadioButton android:id="@+id/radio_pirates"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:background="@drawable/text_input_border"
+                         android:drawablePadding="5dp"
+
+                         android:drawableRight="@drawable/ic_chrome_reader_mode_black_24dp"
+                         android:text="oklahoma"
+                         />
+            <RadioButton android:id="@+id/radio_ninjas"
+                         android:layout_marginTop="5dp"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:text="RangeVoting"
+                         android:drawableRight="@drawable/ic_chrome_reader_mode_black_24dp"
+                         android:background="@drawable/text_input_border"
+                         />
+
+            <RadioButton android:id="@+id/radio_ninjas3"
+                         android:layout_marginTop="5dp"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:text="RankedPairs"
+                         android:drawableRight="@drawable/ic_chrome_reader_mode_black_24dp"
+                         android:background="@drawable/text_input_border"
+            />
+            <RadioButton android:id="@+id/radio_ninjas4"
+                         android:layout_marginTop="5dp"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:text="Satisfaction Approval Voting"
+                         android:drawableRight="@drawable/ic_chrome_reader_mode_black_24dp"
+                         android:background="@drawable/text_input_border"
+            />
+            <RadioButton android:id="@+id/radio_ninjas5"
+                         android:layout_marginTop="5dp"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:text="Sequential Approval Proportional"
+                         android:drawableRight="@drawable/ic_chrome_reader_mode_black_24dp"
+                         android:background="@drawable/text_input_border"
+            />
+            <RadioButton android:id="@+id/radio_ninja6"
+                         android:layout_marginTop="5dp"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:text="SmithSet"
+                         android:drawableRight="@drawable/ic_chrome_reader_mode_black_24dp"
+                         android:background="@drawable/text_input_border"
+            />
+            <RadioButton android:id="@+id/radio_ninjas7"
+                         android:layout_marginTop="5dp"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:text="Approval"
+                         android:drawableRight="@drawable/ic_chrome_reader_mode_black_24dp"
+                         android:background="@drawable/text_input_border"
+            />
+            <RadioButton android:id="@+id/radio_ninjas8"
+                         android:layout_marginTop="5dp"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:text="Exhaustive ballot"
+                         android:drawableRight="@drawable/ic_chrome_reader_mode_black_24dp"
+                         android:background="@drawable/text_input_border"
+            />
+            <RadioButton android:id="@+id/radio_ninjas9"
+                         android:layout_marginTop="5dp"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:text="Baldwin"
+                         android:drawableRight="@drawable/ic_chrome_reader_mode_black_24dp"
+                         android:background="@drawable/text_input_border"
+            />
+            <RadioButton android:id="@+id/radio_ninjas10"
+                         android:layout_marginTop="5dp"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:text="Exhaustive ballot with dropoff"
+                         android:drawableRight="@drawable/ic_chrome_reader_mode_black_24dp"
+                         android:background="@drawable/text_input_border"
+            />
+            <RadioButton android:id="@+id/radio_ninjas11"
+                         android:layout_marginTop="5dp"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:text="uncovered set"
+                         android:drawableRight="@drawable/ic_chrome_reader_mode_black_24dp"
+                         android:background="@drawable/text_input_border"
+            />
+            <RadioButton android:id="@+id/radio_ninjas12"
+                         android:layout_marginTop="5dp"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:text="copeland"
+                         android:drawableRight="@drawable/ic_chrome_reader_mode_black_24dp"
+                         android:background="@drawable/text_input_border"
+            />
+            <RadioButton android:id="@+id/radio_ninjas13"
+                         android:layout_marginTop="5dp"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:text="Minimax Condorcet"
+                         android:drawableRight="@drawable/ic_chrome_reader_mode_black_24dp"
+                         android:background="@drawable/text_input_border"
+            />
+            <RadioButton android:id="@+id/radio_ninjas14"
+                         android:layout_marginTop="5dp"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:text="Random Ballot"
+                         android:drawableRight="@drawable/ic_chrome_reader_mode_black_24dp"
+                         android:background="@drawable/text_input_border"
+            />
+            <RadioButton android:id="@+id/radio_ninjas15"
+                         android:layout_marginTop="5dp"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:text="Borda"
+                         android:drawableRight="@drawable/ic_chrome_reader_mode_black_24dp"
+                         android:background="@drawable/text_input_border"
+            />
+            <RadioButton android:id="@+id/radio_ninjas16"
+                         android:layout_marginTop="5dp"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:text="Kemeny Young"
+                         android:drawableRight="@drawable/ic_chrome_reader_mode_black_24dp"
+                         android:background="@drawable/text_input_border"
+            />
+            <RadioButton android:id="@+id/radio_ninjas17"
+                         android:layout_marginTop="5dp"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:text="Nanson"
+                         android:drawableRight="@drawable/ic_chrome_reader_mode_black_24dp"
+                         android:background="@drawable/text_input_border"
+            />
+            <RadioButton android:id="@+id/radio_ninjas18"
+                         android:layout_marginTop="5dp"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:text="Instant Runoff 2-round"
+                         android:drawableRight="@drawable/ic_chrome_reader_mode_black_24dp"
+                         android:background="@drawable/text_input_border"
+            />
+            <RadioButton android:id="@+id/radio_ninjas19"
+                         android:layout_marginTop="5dp"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:text="Contingent Method"
+                         android:drawableRight="@drawable/ic_chrome_reader_mode_black_24dp"
+                         android:background="@drawable/text_input_border"
+            />
+
+
+
+
+        </RadioGroup>-->
+
+
+        <RelativeLayout android:layout_width="match_parent" android:layout_marginTop="20dp" android:layout_height="wrap_content">
+            <android.support.v7.widget.AppCompatButton
+                    android:id="@+id/btn_prev"
+                    android:layout_alignParentLeft="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/button_background"
+                    android:textColor="#fff"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginRight="40dp"
+                    android:layout_marginTop="20dp"
+
+                    android:text="Prev"/>
+            <android.support.v7.widget.AppCompatButton
+                    android:id="@+id/btn_next"
+                    android:layout_alignParentRight="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/button_background"
+                    android:textColor="#fff"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginRight="40dp"
+                    android:layout_marginTop="20dp"
+
+                    android:text="Next"/>
+            <RelativeLayout android:layout_width="match_parent"
+                            android:layout_marginTop="20dp" android:layout_height="wrap_content" android:layout_centerHorizontal="true"></RelativeLayout>
+            <ProgressBar
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="30dp"
+
+                    android:layout_centerHorizontal="true"
+                    android:visibility="gone"
+                    android:layout_centerInParent="true"
+
+
+
+                    android:id="@+id/progress_bar"
+
+                    android:indeterminateDrawable="@drawable/loader_anim" />
+        </RelativeLayout>
+
+
+
+    </LinearLayout>
+
+</ScrollView>

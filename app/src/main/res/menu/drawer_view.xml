@@ -1,0 +1,36 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+>
+
+   <item android:id="@+id/navigation_cast_vote"
+   android:title="@string/cast_vote"
+   android:icon="@drawable/ic_add_black_24dp">
+
+
+   </item>
+
+    <item
+
+            android:id="@+id/navigation_about"
+            android:icon="@drawable/ic_code_black_24dp"
+
+
+            android:title="@string/title_about"/>
+    <item
+            android:id="@+id/navigation_help"
+            android:icon="@drawable/ic_question"
+
+
+
+            android:title="@string/title_help"/>
+    <item
+            android:id="@+id/navigation_logout"
+            android:icon="@drawable/ic_account_circle_black_24dp"
+
+
+
+            android:title="@string/title_logout"/>
+
+
+
+
+</menu>

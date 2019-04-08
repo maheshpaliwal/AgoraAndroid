@@ -19,6 +19,8 @@ import org.json.JSONArray
 import org.w3c.dom.Text
 import android.content.SharedPreferences
 import android.preference.PreferenceManager
+import android.text.method.HideReturnsTransformationMethod
+import android.text.method.PasswordTransformationMethod
 import android.util.Log
 import com.android.volley.AuthFailureError
 import com.facebook.CallbackManager
@@ -46,8 +48,23 @@ class SignInActivity : AppCompatActivity() {
         val progressBar: ProgressBar =findViewById<ProgressBar>(R.id.progress_bar)
         val reset_password:TextView=findViewById<TextView>(R.id.forgot_password)
         val button_fb:Button=findViewById<Button>(R.id.login_button_fb)
-
+        val show_password:ImageButton=findViewById<ImageButton>(R.id.show_password)
+        val hide_password:ImageButton=findViewById<ImageButton>(R.id.hide_password)
         val signup:TextView=findViewById<TextView>(R.id.btn_signup)
+        show_password.setOnClickListener{
+            // Show Password
+            password.setTransformationMethod(HideReturnsTransformationMethod.getInstance())
+            hide_password.visibility=View.VISIBLE
+            show_password.visibility=View.GONE
+
+        }
+        hide_password.setOnClickListener{
+            password.setTransformationMethod(PasswordTransformationMethod.getInstance())
+            hide_password.visibility=View.GONE
+            show_password.visibility=View.VISIBLE
+
+
+        }
 
         val t = Thread(Runnable {
             //  Initialize SharedPreferences

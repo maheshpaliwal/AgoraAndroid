@@ -9,6 +9,7 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.RelativeLayout
 import android.widget.TextView
 import android.widget.Toast
 import com.android.volley.AuthFailureError
@@ -27,11 +28,12 @@ import java.util.*
 
 class fragment_finished : Fragment() {
     var recyclerView: RecyclerView?=null
-    var emptyView: TextView?=null
+
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         recyclerView=this.recycler_view
-        emptyView=this.emptyView
+
+
         loadfinished()
 
         super.onActivityCreated(savedInstanceState)
@@ -147,7 +149,8 @@ class fragment_finished : Fragment() {
                             elections.add(election)
                             val manager = LinearLayoutManager(context)
                             var recyclerView=this.recycler_view
-                            if(recyclerView==null){}
+                            if(recyclerView==null){
+                            }
                             else{
                                 recyclerView.layoutManager = manager
                                 recyclerView.adapter=ElectionCardAdapter(elections)}
@@ -167,23 +170,7 @@ class fragment_finished : Fragment() {
 
                     }
 
-                    // val date1 = SimpleDateFormat("yyyy-mm-ddThh:mm:ss.fffZ").parse(start_time)
-                    val length:Int=jar.length()
-                    val dtStart = "2010-10-15T09:27:37Z"
-                    val format = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'")
-                    var start_date: Date?=null
-                    var end_date: Date?=null
-                    var difference_date:Long?=null
-                    try {
-                        start_date = format.parse(start_time)
-                        end_date=format.parse(end_time)
-                        difference_date=end_date.getTime()-start_date.getTime()
 
-
-                    } catch (e: ParseException) {
-                        // TODO Auto-generated catch block
-                        e.printStackTrace()
-                    }
 
                    }
 

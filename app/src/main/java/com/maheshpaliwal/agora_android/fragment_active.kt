@@ -30,7 +30,10 @@ import android.support.v7.widget.RecyclerView
 
 class fragment_active : Fragment() {
     var mContext: Context ?= null
+
+
     override fun onActivityCreated(savedInstanceState: Bundle?) {
+
         requireActivity()
 
             loadactive()
@@ -146,7 +149,8 @@ class fragment_active : Fragment() {
 
                             val manager = LinearLayoutManager(context)
                               var recyclerView=this.recycler_view
-                            if(recyclerView==null){}
+                            if(recyclerView==null){
+                            }
                             else{
                             recyclerView.layoutManager = manager
                            recyclerView.adapter=ElectionCardAdapter(elections)}

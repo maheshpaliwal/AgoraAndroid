@@ -15,7 +15,7 @@ import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.JsonObjectRequest
 import com.maheshpaliwal.agora_android.model.Election_info
-import kotlinx.android.synthetic.main.fragment_fragment_all.*
+
 import org.json.JSONArray
 import org.json.JSONObject
 import java.text.ParseException
@@ -23,17 +23,18 @@ import java.text.SimpleDateFormat
 import java.util.*
 import android.widget.TextView
 import android.support.v7.widget.RecyclerView
-
-
+import android.widget.RelativeLayout
+import kotlinx.android.synthetic.main.fragment_fragment_pending.*
 
 
 class fragment_pending : Fragment() {
     var recyclerView: RecyclerView?=null
-    var emptyView: TextView?=null
+
     override fun onActivityCreated(savedInstanceState: Bundle?) {
 
           recyclerView=this.recycler_view
-        emptyView=this.emptyView
+
+
         loadpending()
 
 
@@ -60,6 +61,8 @@ class fragment_pending : Fragment() {
 
 
         val url = "https://agora-rest-api.herokuapp.com/"
+
+
 
 
 
@@ -136,13 +139,19 @@ class fragment_pending : Fragment() {
 
 
                             )
+                            if(pending==0){
+
+                            }
+                            else{
                             elections.add(election)
                             val manager = LinearLayoutManager(context)
                             var recyclerView=this.recycler_view
-                            if(recyclerView==null){}
+                            if(recyclerView==null){
+
+                            }
                             else{
                                 recyclerView.layoutManager = manager
-                                recyclerView.adapter=ElectionCardAdapter(elections)}
+                                recyclerView.adapter=ElectionCardAdapter(elections)}}
 
 
 

@@ -5,7 +5,7 @@ import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentPagerAdapter
 
-class ElectionDetailsAdapter(private val myContext: ElectionDetails, fm: FragmentManager, private var totalTabs: Int, val token:String) : FragmentPagerAdapter(fm) {
+class ElectionDetailsAdapter(private val myContext: ElectionDetails, fm: FragmentManager, private var totalTabs: Int) : FragmentPagerAdapter(fm) {
 
     // this is for fragment tabs
     override fun getItem(position: Int): Fragment? {
@@ -21,31 +21,19 @@ class ElectionDetailsAdapter(private val myContext: ElectionDetails, fm: Fragmen
             }
             1 -> {
 
-                val fragment= fragment_pending()
-                val args = Bundle()
+                val fragment= fragment_voters()
 
-                args.putString("TOKEN_AGORA",token)
-
-                fragment.arguments= args
                 return fragment
             }
             2 -> {
-                val fragment= fragment_active()
-                val args = Bundle()
+                val fragment= fragment_ballots()
 
-                args.putString("TOKEN_AGORA",token)
-
-                fragment.arguments= args
 
                 return fragment
             }
             3 ->{
-                val fragment= fragment_finished()
-                val args = Bundle()
+                val fragment= fragment_results()
 
-                args.putString("TOKEN_AGORA",token)
-
-                fragment.arguments= args
 
                 return fragment
             }

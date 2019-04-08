@@ -2,10 +2,10 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
              xmlns:tools="http://schemas.android.com/tools"
              android:layout_width="match_parent"
-            android:layout_marginBottom="50dp"
-
              android:layout_height="match_parent"
-             tools:context=".range_seekbar">
+            android:layout_marginBottom="50dp"
+             tools:context=".fragment_voters">
+
     <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
                   android:layout_marginTop="20dp"
                   android:paddingBottom="40dp"
@@ -14,20 +14,15 @@
 
                   android:layout_marginLeft="10dp"
                   android:layout_marginRight="10dp"
-    android:orientation="vertical">
+                  android:orientation="vertical">
         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
                   android:textAlignment="center"
                   android:layout_marginTop="20dp"
                   android:textColor="#000"
                   android:layout_gravity="center_horizontal"
 
-        android:text="CANDIDATES"/>
-        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-        android:textAlignment="center"
-                  android:layout_gravity="center_horizontal"
-                  android:layout_marginTop="5dp"
-        android:text="Range Voting Ballot"
-        android:textSize="12dp"/>
+                  android:text="VOTERS"/>
+
         <RelativeLayout android:layout_width="match_parent"
                         android:background="#fff"
                         android:padding="2dp"
@@ -39,57 +34,51 @@
                         android:layout_marginRight="10dp"
                         android:id="@+id/realative1" android:layout_height="wrap_content">
             <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-            android:id="@+id/number1"
-            android:text="1"
+                      android:id="@+id/number1"
+                      android:text="1"
                       android:paddingLeft="10dp"
                       android:paddingRight="10dp"
                       android:textSize="30dp"
                       android:textStyle="bold"
-            android:textColor="#fff"
-            android:background="#00843d"
+                      android:textColor="#fff"
+                      android:background="#00843d"
             />
 
 
-        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                  android:text="Candidate 1"
-                  android:textSize="14dp"
-                  android:layout_toRightOf="@+id/number1"
-
-
-
-                  android:id="@+id/candidate1"
-                  android:textColor="#333333"
-
-
-                  android:layout_marginLeft="10dp"
-
-        />
             <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-
-            android:layout_marginRight="20dp"
-                      android:id="@+id/seekbar_progress1"
-                      android:text="0/100"
-            android:layout_alignParentRight="true"/>
-
-<SeekBar android:layout_width="match_parent" android:layout_height="wrap_content"
-         android:max="100"
-         android:layout_marginTop="5dp"
+                      android:text="Voter 1"
+                      android:textSize="14dp"
+                      android:layout_toRightOf="@+id/number1"
+                      android:id="@+id/voter1"
+                      android:layout_centerVertical="true"
 
 
-         android:layout_toRightOf="@+id/number1"
-         android:layout_marginRight="20dp"
-         android:layout_below="@+id/candidate1"
-         android:id="@+id/seekbar1"
-/>
+
+
+                      android:textColor="#333333"
+
+
+                      android:layout_marginLeft="10dp"
+
+            />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+                      android:textColor="#333333"
+                      android:layout_centerVertical="true"
+                      android:layout_alignParentRight="true"
+            android:text="xyz@gmail.com"/>
+
+
+
         </RelativeLayout>
-
         <RelativeLayout android:layout_width="match_parent"
                         android:background="#fff"
                         android:padding="2dp"
-
-
-
                         android:layout_marginTop="10dp"
+
+
+
+
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
                         android:id="@+id/realative2" android:layout_height="wrap_content">
@@ -106,13 +95,15 @@
 
 
             <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                      android:text="Candidate 2"
-                      android:textSize="14dp"
+                      android:text="Voter 2"
+
                       android:layout_toRightOf="@+id/number2"
+                      android:id="@+id/voter2"
+                      android:layout_centerVertical="true"
 
 
 
-                      android:id="@+id/candidate2"
+
                       android:textColor="#333333"
 
 
@@ -120,30 +111,23 @@
 
             />
             <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-
-                      android:layout_marginRight="20dp"
-                      android:id="@+id/seekbar_progress2"
-                      android:text="0/100"
-                      android:layout_alignParentRight="true"/>
-
-            <SeekBar android:layout_width="match_parent" android:layout_height="wrap_content"
-                     android:max="100"
-                     android:layout_marginTop="5dp"
+                      android:layout_marginRight="10dp"
+                      android:textColor="#333333"
+                      android:layout_centerVertical="true"
+                      android:layout_alignParentRight="true"
+                      android:text="xyz@gmail.com"/>
 
 
-                     android:layout_toRightOf="@+id/number2"
-                     android:layout_marginRight="20dp"
-                     android:layout_below="@+id/candidate2"
-                     android:id="@+id/seekbar2"
-            />
+
         </RelativeLayout>
         <RelativeLayout android:layout_width="match_parent"
                         android:background="#fff"
                         android:padding="2dp"
-
-
-
                         android:layout_marginTop="10dp"
+
+
+
+
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
                         android:id="@+id/realative3" android:layout_height="wrap_content">
@@ -160,13 +144,15 @@
 
 
             <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                      android:text="Candidate 3"
-                      android:textSize="14dp"
+                      android:text="Voter 3"
+
                       android:layout_toRightOf="@+id/number3"
+                      android:id="@+id/voter3"
+                      android:layout_centerVertical="true"
 
 
 
-                      android:id="@+id/candidate3"
+
                       android:textColor="#333333"
 
 
@@ -174,30 +160,23 @@
 
             />
             <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-
-                      android:layout_marginRight="20dp"
-                      android:id="@+id/seekbar_progress3"
-                      android:text="0/100"
-                      android:layout_alignParentRight="true"/>
-
-            <SeekBar android:layout_width="match_parent" android:layout_height="wrap_content"
-                     android:max="100"
-                     android:layout_marginTop="5dp"
+                      android:layout_marginRight="10dp"
+                      android:textColor="#333333"
+                      android:layout_centerVertical="true"
+                      android:layout_alignParentRight="true"
+                      android:text="xyz@gmail.com"/>
 
 
-                     android:layout_toRightOf="@+id/number3"
-                     android:layout_marginRight="20dp"
-                     android:layout_below="@+id/candidate3"
-                     android:id="@+id/seekbar3"
-            />
+
         </RelativeLayout>
         <RelativeLayout android:layout_width="match_parent"
                         android:background="#fff"
                         android:padding="2dp"
-
-
-
                         android:layout_marginTop="10dp"
+
+
+
+
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
                         android:id="@+id/realative4" android:layout_height="wrap_content">
@@ -214,13 +193,15 @@
 
 
             <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                      android:text="Candidate 4"
-                      android:textSize="14dp"
+                      android:text="Voter 4"
+
                       android:layout_toRightOf="@+id/number4"
+                      android:layout_centerVertical="true"
+                      android:id="@+id/voter4"
 
 
 
-                      android:id="@+id/candidate4"
+
                       android:textColor="#333333"
 
 
@@ -228,36 +209,65 @@
 
             />
             <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-
-                      android:layout_marginRight="20dp"
-                      android:id="@+id/seekbar_progress4"
-                      android:text="0/100"
-                      android:layout_alignParentRight="true"/>
-
-            <SeekBar android:layout_width="match_parent" android:layout_height="wrap_content"
-                     android:max="100"
-                     android:layout_marginTop="5dp"
+                      android:layout_marginRight="10dp"
+                      android:textColor="#333333"
+                      android:layout_centerVertical="true"
+                      android:layout_alignParentRight="true"
+                      android:text="xyz@gmail.com"/>
 
 
-                     android:layout_toRightOf="@+id/number4"
-                     android:layout_marginRight="20dp"
-                     android:layout_below="@+id/candidate4"
-                     android:id="@+id/seekbar4"
-            />
+
         </RelativeLayout>
-        <android.support.v7.widget.AppCompatButton
-                android:id="@+id/btn_vote"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/button_background"
-                android:textColor="#fff"
+        <RelativeLayout android:layout_width="match_parent"
+                        android:background="#fff"
+                        android:padding="2dp"
+                        android:layout_marginTop="10dp"
 
-                android:layout_gravity="center"
-                android:layout_marginLeft="40dp"
-                android:layout_marginRight="40dp"
-                android:layout_marginTop="30dp"
 
-                android:text="Vote"/>
+
+
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:id="@+id/realative5" android:layout_height="wrap_content">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:id="@+id/number5"
+                      android:text="5"
+                      android:paddingLeft="10dp"
+                      android:paddingRight="10dp"
+                      android:textSize="30dp"
+                      android:textStyle="bold"
+                      android:textColor="#fff"
+                      android:background="#00843d"
+            />
+
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:text="Voter 5"
+                      android:layout_centerVertical="true"
+                      android:layout_toRightOf="@+id/number5"
+                      android:id="@+id/voter5"
+
+
+
+
+                      android:textColor="#333333"
+
+
+                      android:layout_marginLeft="10dp"
+
+            />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:layout_marginRight="10dp"
+                      android:textColor="#333333"
+                      android:layout_centerVertical="true"
+                      android:layout_alignParentRight="true"
+                      android:text="xyz@gmail.com"/>
+
+
+
+        </RelativeLayout>
+
 
     </LinearLayout>
+
 </ScrollView>

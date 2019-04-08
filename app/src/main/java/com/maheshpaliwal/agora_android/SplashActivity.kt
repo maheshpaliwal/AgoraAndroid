@@ -112,7 +112,7 @@ class SplashActivity : AppCompatActivity() {
 
                     }catch (e:Exception){
 
-                        Toast.makeText(this,"$e", Toast.LENGTH_LONG).show()
+
 
 
 
@@ -132,7 +132,7 @@ class SplashActivity : AppCompatActivity() {
                     else{
 
 
-                        Toast.makeText(this,"volley error: ${it.toString()}", Toast.LENGTH_LONG).show()}
+                       }
 
                 })
 

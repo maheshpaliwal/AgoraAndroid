@@ -16,7 +16,7 @@ class ElectionDetails : Fragment() {
     override fun onActivityCreated(
         savedInstanceState: Bundle?) {
 
-        val token= arguments!!.getString("TOKEN_AGORA")
+
 
         var tabLayout: TabLayout? = view!!.findViewById<TabLayout>(R.id.tabLayout)
         var viewPager: ViewPager?=view!!.findViewById<ViewPager>(R.id.viewPager)
@@ -28,7 +28,7 @@ class ElectionDetails : Fragment() {
         tabLayout!!.tabGravity = TabLayout.GRAVITY_CENTER
 
 
-        val adapter = ElectionDetailsAdapter(this,childFragmentManager, tabLayout.tabCount,token)
+        val adapter = ElectionDetailsAdapter(this,childFragmentManager, tabLayout.tabCount)
         viewPager!!.adapter = adapter
 
         viewPager!!.addOnPageChangeListener(TabLayout.TabLayoutOnPageChangeListener(tabLayout))

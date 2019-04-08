@@ -84,7 +84,7 @@ class FragmentCreate3 : Fragment() {
             }
 
         })
-       Toast.makeText(context,"$candidate",Toast.LENGTH_LONG).show()
+
         super.onActivityCreated(savedInstanceState)
     }
 

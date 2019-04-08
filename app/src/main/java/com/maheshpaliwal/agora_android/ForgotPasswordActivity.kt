@@ -4,10 +4,8 @@ import android.app.ProgressDialog
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import android.widget.EditText
-import android.widget.TextView
-import android.widget.Toast
+import android.view.View
+import android.widget.*
 import com.android.volley.DefaultRetryPolicy
 import com.android.volley.Request
 import com.android.volley.Response
@@ -19,12 +17,18 @@ class ForgotPasswordActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_forgot_password)
+        val progressBar: ProgressBar =findViewById<ProgressBar>(R.id.progress_bar)
         val userName: EditText = findViewById<EditText>(R.id.input_userName)
         val reset: Button = findViewById<Button>(R.id.btn_sendLink)
         reset.setOnClickListener{
 
 
             var error = false
+
+            reset.visibility= View.GONE
+
+
+            progressBar.visibility= View.VISIBLE
 
             val in_userName = userName.getText().toString()
 
@@ -41,14 +45,6 @@ class ForgotPasswordActivity : AppCompatActivity() {
             if (error == false) {
 
 
-                dialog = ProgressDialog.show(this, null, null)
-
-                dialog.setContentView(R.layout.loader_signin);
-
-
-
-
-                dialog.show()
 
 
                 val path = "api/v1/auth/forgotPassword/send/"+in_userName
@@ -69,7 +65,8 @@ class ForgotPasswordActivity : AppCompatActivity() {
                     Response.Listener { response ->
                         // Process the json
                         try {
-                            dialog.dismiss()
+                            progressBar.visibility=View.GONE
+                            reset.visibility=View.VISIBLE
 
                                 val intent = Intent(this@ForgotPasswordActivity, PasswordResetEmailSent::class.java)
                                 startActivity(intent)
@@ -79,8 +76,10 @@ class ForgotPasswordActivity : AppCompatActivity() {
 
 
                         }catch (e:Exception){
+                            progressBar.visibility=View.GONE
+                            reset.visibility=View.VISIBLE
                             // catching exception
-                            dialog.dismiss()
+
                             Toast.makeText(this,"$response", Toast.LENGTH_LONG).show()
 
 
@@ -89,7 +88,8 @@ class ForgotPasswordActivity : AppCompatActivity() {
 
                     }, Response.ErrorListener{
                         // Error in request
-                        dialog.dismiss()
+                        progressBar.visibility=View.GONE
+                        reset.visibility=View.VISIBLE
                         if(it.toString().contains("com.android.volley.ParseError")){
                             val intent = Intent(this@ForgotPasswordActivity, PasswordResetEmailSent::class.java)
                             startActivity(intent)

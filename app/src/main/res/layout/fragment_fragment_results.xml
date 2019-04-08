@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" xmlns:app="http://schemas.android.com/apk/res-auto"
+            tools:context=".fragment_results">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                  android:layout_marginTop="20dp"
+                  android:paddingBottom="40dp"
+
+
+
+                  android:layout_marginLeft="10dp"
+                  android:layout_marginRight="10dp"
+                  android:orientation="vertical">
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:textAlignment="center"
+                  android:layout_marginTop="20dp"
+                  android:textColor="#000"
+                  android:layout_gravity="center_horizontal"
+
+                  android:text="WINNERS"/>
+
+        <RelativeLayout android:layout_width="match_parent"
+                        android:background="#fff"
+                        android:padding="2dp"
+
+
+
+                        android:layout_marginTop="20dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:id="@+id/realative1" android:layout_height="wrap_content">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:id="@+id/number1"
+                      android:text="1"
+                      android:paddingLeft="10dp"
+                      android:paddingRight="10dp"
+                      android:textSize="40dp"
+                      android:textStyle="bold"
+                      android:textColor="#fff"
+                      android:background="#00843d"
+            />
+
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:text="Candidate 1"
+                      android:textSize="14dp"
+                      android:layout_toRightOf="@+id/number1"
+                      android:layout_centerVertical="true"
+
+
+
+                      android:id="@+id/candidate1"
+                      android:textColor="#333333"
+
+
+                      android:layout_marginLeft="10dp"
+
+            />
+            <RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:layout_alignParentRight="true"
+
+                          android:layout_marginRight="8dp"
+                          android:layout_centerInParent="true"
+                          android:textSize="7dp"
+                          android:text="175/200"/>
+
+
+
+
+                <me.tankery.lib.circularseekbar.CircularSeekBar android:layout_width="50dp"
+                                                                android:layout_height="50dp"
+                                                                android:id="@+id/circ_seek2"
+                                                                android:layout_alignParentRight="true"
+                                                                app:cs_progress = "175"
+                                                                app:cs_max = "200"
+
+
+
+                                                                app:cs_circle_color = "#c9c9c9"
+                                                                app:cs_circle_progress_color = "#00843d"
+
+
+
+                />
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout android:layout_width="match_parent"
+                        android:background="#fff"
+                        android:padding="2dp"
+
+
+
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:id="@+id/realative2" android:layout_height="wrap_content">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:id="@+id/number2"
+                      android:text="2"
+                      android:paddingLeft="10dp"
+                      android:paddingRight="10dp"
+                      android:textSize="40dp"
+                      android:textStyle="bold"
+                      android:textColor="#fff"
+                      android:background="#00843d"
+            />
+
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:text="Candidate 2"
+                      android:textSize="14dp"
+                      android:layout_toRightOf="@+id/number2"
+                      android:layout_centerVertical="true"
+
+
+
+                      android:id="@+id/candidate2"
+                      android:textColor="#333333"
+
+
+                      android:layout_marginLeft="10dp"
+
+            />
+
+            <RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_alignParentRight="true">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+
+                      android:layout_marginRight="8dp"
+                      android:layout_centerInParent="true"
+                      android:textSize="7dp"
+            android:text="75/200"/>
+
+
+
+
+            <me.tankery.lib.circularseekbar.CircularSeekBar android:layout_width="50dp"
+                                                            android:layout_height="50dp"
+                                                            android:id="@+id/circ_seek"
+                                                            android:layout_alignParentRight="true"
+                                                            app:cs_progress = "75"
+                                                            app:cs_max = "200"
+
+
+
+                                                            app:cs_circle_color = "#c9c9c9"
+                                                            app:cs_circle_progress_color = "#00843d"
+
+
+                                                            app:cs_pointer_alpha_ontouch = "75"
+
+            />
+            </RelativeLayout>
+
+        </RelativeLayout>
+        <RelativeLayout android:layout_width="match_parent"
+                        android:background="#fff"
+                        android:padding="2dp"
+
+
+
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:id="@+id/realative3" android:layout_height="wrap_content">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:id="@+id/number3"
+                      android:text="3"
+                      android:paddingLeft="10dp"
+                      android:paddingRight="10dp"
+                      android:textSize="40dp"
+                      android:textStyle="bold"
+                      android:textColor="#fff"
+                      android:background="#00843d"
+            />
+
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:text="Candidate 3"
+                      android:textSize="14dp"
+                      android:layout_toRightOf="@+id/number3"
+
+
+
+                      android:id="@+id/candidate3"
+                      android:textColor="#333333"
+
+
+                      android:layout_marginLeft="10dp"
+                      android:layout_centerVertical="true"
+
+            />
+            <RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:layout_alignParentRight="true"
+
+                          android:layout_marginRight="8dp"
+                          android:layout_centerInParent="true"
+                          android:textSize="7dp"
+                          android:text="135/200"/>
+
+
+
+
+                <me.tankery.lib.circularseekbar.CircularSeekBar android:layout_width="50dp"
+                                                                android:layout_height="50dp"
+                                                                android:id="@+id/circ_seek3"
+                                                                android:layout_alignParentRight="true"
+                                                                app:cs_progress = "135"
+                                                                app:cs_max = "200"
+
+
+
+                                                                app:cs_circle_color = "#c9c9c9"
+                                                                app:cs_circle_progress_color = "#00843d"
+
+
+
+                />
+            </RelativeLayout>
+        </RelativeLayout>
+        <RelativeLayout android:layout_width="match_parent"
+                        android:background="#fff"
+                        android:padding="2dp"
+
+
+
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:id="@+id/realative4" android:layout_height="wrap_content">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:id="@+id/number4"
+                      android:text="4"
+                      android:paddingLeft="10dp"
+                      android:paddingRight="10dp"
+                      android:textSize="40dp"
+                      android:textStyle="bold"
+                      android:textColor="#fff"
+                      android:background="#00843d"
+            />
+
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:text="Candidate 4"
+                      android:textSize="14dp"
+                      android:layout_toRightOf="@+id/number4"
+                      android:layout_centerVertical="true"
+
+
+
+                      android:id="@+id/candidate4"
+                      android:textColor="#333333"
+
+
+                      android:layout_marginLeft="10dp"
+
+            />
+            <RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:layout_alignParentRight="true"
+
+                          android:layout_marginRight="8dp"
+                          android:layout_centerInParent="true"
+                          android:textSize="7dp"
+                          android:text="105/200"/>
+
+
+
+
+                <me.tankery.lib.circularseekbar.CircularSeekBar android:layout_width="50dp"
+                                                                android:layout_height="50dp"
+                                                                android:id="@+id/circ_seek4"
+                                                                android:layout_alignParentRight="true"
+                                                                app:cs_progress = "105"
+                                                                app:cs_max = "200"
+
+
+
+                                                                app:cs_circle_color = "#c9c9c9"
+                                                                app:cs_circle_progress_color = "#00843d"
+
+
+
+                />
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+
+</ScrollView>

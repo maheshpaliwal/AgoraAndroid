@@ -110,7 +110,19 @@ class Main2Activity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
         val nav_profile:ImageView=headerView.findViewById<ImageView>(R.id.imageView)
         Picasso.get().load(avtar_url).into(nav_profile)
 
+       val notifications_button:ImageView=findViewById<ImageView>(R.id.notification_action_bar)
+        notifications_button.setOnClickListener{
+            val intent=Intent(this@Main2Activity,Notifications_activity::class.java)
+            intent.putExtra("USER_NAME_AGORA",user_name)
+            intent.putExtra("EMAIL_AGORA",email_add)
+            intent.putExtra("FIRST_NAME_AGORA",first_name)
+            intent.putExtra("LAST_NAME_AGORA",last_name)
+            intent.putExtra("AVATAR_URL_AGORA",avtar_url)
+            intent.putExtra("TOKEN_AGORA",token)
+            intent.putExtra("EXPIRES_ON_AGORA",expires_on)
+            startActivity(intent)
 
+        }
 
 
         val toggle = ActionBarDrawerToggle(

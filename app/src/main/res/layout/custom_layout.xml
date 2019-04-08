@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_marginRight="20dp"
+              android:layout_marginLeft="20dp"
+              android:layout_centerInParent="true"
+              android:orientation="vertical">
+
+    <TextView
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:text="EDIT"
+            android:textStyle="bold"
+
+            android:textSize="20dp"
+            android:textColor="#00843d"
+            android:layout_gravity="center_horizontal"
+            android:textAlignment="center"
+
+            android:id="@+id/txtTitle" />
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+              android:layout_gravity="center"
+              android:textAlignment="center"
+              android:maxLines="10"
+    android:text="This is Demo text for editing an election. Here you can edit election if election is not active and add voters."/>
+    <Button android:layout_width="fill_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="Edit Election"
+            android:textColor="#fff"
+            android:background="@drawable/button_background"
+            android:layout_marginBottom="20dp"
+    />
+
+
+
+
+
+
+
+</LinearLayout>

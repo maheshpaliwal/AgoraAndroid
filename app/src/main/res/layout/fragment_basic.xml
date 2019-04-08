@@ -56,7 +56,7 @@
                         android:layout_toRightOf="@+id/description_icon"
                         android:layout_below="@+id/description_title"
                         android:layout_marginLeft="10dp"
-                        android:layout_marginTop="10dp"
+
 
                         android:layout_height="wrap_content"
                         android:id="@+id/description"
@@ -100,7 +100,7 @@
 
                 <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
                           android:paddingLeft="10dp"
-                          android:paddingTop="5dp"
+
                           android:layout_below="@+id/candidate_title"
                           android:layout_toRightOf="@id/candidate_icon"
                           android:textColor="#555"
@@ -223,6 +223,7 @@
                 <LinearLayout android:layout_width="wrap_content"
                               android:layout_marginRight="20dp"
                               android:layout_marginLeft="20dp"
+                              android:layout_marginBottom="20dp"
                               android:id="@+id/layout3"
 
                               android:layout_below="@+id/layout2"
@@ -250,54 +251,7 @@
                 </LinearLayout>
             </RelativeLayout>
         </LinearLayout>
-        <RelativeLayout android:layout_width="match_parent"
-                        android:layout_marginTop="16dp" android:layout_height="wrap_content"
 
-        >
-            <RelativeLayout android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_centerHorizontal="true"
-                            android:layout_centerInParent="true">
-                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                          android:textColor="#555"
-                          android:textSize="10dp"
-                          android:layout_centerVertical="true"
-                          android:layout_alignParentLeft="true"
-                          android:layout_marginLeft="24dp"
-                          android:id="@+id/edit"
-                          android:layout_marginBottom="14dp"
-                          android:layout_marginRight="24dp"
-                          android:drawableTop="@drawable/ic_settings_black_24dp"
-                          android:text="EDIT"/>
-                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                          android:textColor="#555"
-                          android:textSize="10dp"
-                          android:id="@+id/view"
-                          android:layout_centerInParent="true"
-
-                          android:layout_marginBottom="14dp"
-
-                          android:drawableTop="@drawable/ic_remove_red_eye_black_24dp"
-                          android:text="VIEW"/>
-                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                          android:textColor="#555"
-                          android:textSize="10dp"
-                          android:id="@+id/delete"
-                          android:layout_centerVertical="true"
-                          android:layout_marginRight="24dp"
-                          android:layout_alignParentRight="true"
-
-                          android:layout_marginBottom="14dp"
-
-                          android:drawableTop="@drawable/ic_delete_black_24dp"
-                          android:text="DELETE"/>
-
-
-
-
-            </RelativeLayout>
-
-        </RelativeLayout>
     </LinearLayout>
 
 </ScrollView>

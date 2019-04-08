@@ -192,7 +192,7 @@ class SignInActivity : AppCompatActivity() {
             } else {
                 userName.setError(null)
             }
-            var dialog: ProgressDialog
+
 
             if (error == false) {
                 signin.visibility= View.GONE
@@ -394,7 +394,7 @@ class SignInActivity : AppCompatActivity() {
 
                     }catch (e:Exception){
 
-                        Toast.makeText(this,"$e",Toast.LENGTH_LONG).show()
+
 
 
 
@@ -414,7 +414,7 @@ class SignInActivity : AppCompatActivity() {
                     else{
 
 
-                        Toast.makeText(this,"volley error: ${it.toString()}", Toast.LENGTH_LONG).show()}
+                        }
 
                 })
 

@@ -12,6 +12,8 @@ import android.widget.TextView
 import com.maheshpaliwal.agora_android.model.Election_info
 import android.support.v7.app.AppCompatActivity
 import android.view.Window
+import android.widget.Button
+import android.widget.ImageButton
 
 
 // election card adapter to fill election information like election name etc in recyclerview
@@ -64,6 +66,12 @@ class ElectionCardAdapter (private val election_info:ArrayList<Election_info>): 
                 dialog.setCanceledOnTouchOutside(false)
                 dialog.setCancelable(true)
                 dialog.show()
+                val close_button: ImageButton =dialog.findViewById<ImageButton>(R.id.close)
+                close_button.setOnClickListener{
+
+                    dialog.dismiss()
+
+                }
             }
 
 
@@ -79,6 +87,12 @@ class ElectionCardAdapter (private val election_info:ArrayList<Election_info>): 
                 dialog.setCanceledOnTouchOutside(false)
                 dialog.setCancelable(true)
                 dialog.show()
+                val close_button: ImageButton =dialog.findViewById<ImageButton>(R.id.close)
+                close_button.setOnClickListener{
+
+                    dialog.dismiss()
+
+                }
             }
 
 

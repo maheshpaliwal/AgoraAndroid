@@ -42,6 +42,7 @@ class SignInActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_in)
+        //define variables
         val userName: EditText = findViewById<EditText>(R.id.input_userName)
         val password: EditText = findViewById<EditText>(R.id.input_password)
         val signin: Button = findViewById<Button>(R.id.btn_signin)
@@ -59,6 +60,7 @@ class SignInActivity : AppCompatActivity() {
 
         }
         hide_password.setOnClickListener{
+            // hide password
             password.setTransformationMethod(PasswordTransformationMethod.getInstance())
             hide_password.visibility=View.GONE
             show_password.visibility=View.VISIBLE
@@ -96,6 +98,7 @@ class SignInActivity : AppCompatActivity() {
 
         t.start()
         button_fb.setOnClickListener{
+            //facebook sign In
             callbackManager = CallbackManager.Factory.create()
             LoginManager.getInstance().logInWithReadPermissions(this, Arrays.asList("public_profile", "email"))
             LoginManager.getInstance().registerCallback(callbackManager,
@@ -164,13 +167,13 @@ class SignInActivity : AppCompatActivity() {
                     }
 
                     override fun onCancel() {
-                        Log.d("MainActivity", "Facebook onCancel.")
+                        Log.d("Sign In", "Facebook onCancel.")
 
                     }
 
                     override fun onError(error: FacebookException) {
                         Toast.makeText(applicationContext,"$error",Toast.LENGTH_LONG).show()
-                        Log.d("MainActivity", "Facebook onError.")
+                        Log.d("SignIN", "Facebook onError.")
 
                     }
                 })
@@ -178,7 +181,7 @@ class SignInActivity : AppCompatActivity() {
 
 
      reset_password.setOnClickListener{
-
+        // redirect to reset password
 
          val intent=Intent(this@SignInActivity,ForgotPasswordActivity::class.java)
          startActivity(intent)
@@ -189,6 +192,7 @@ class SignInActivity : AppCompatActivity() {
 
         }
         signin.setOnClickListener{
+            // verify user credentials
 
 
             var error = false
@@ -326,7 +330,7 @@ class SignInActivity : AppCompatActivity() {
     }
 
     private fun displayToast(message: String) {
-        // Inflate toast XML layout
+        // display appropriate error
         val layout:View = layoutInflater.inflate(
             R.layout.toast_layout,
             findViewById<ViewGroup>(R.id.toast_layout_root)
@@ -346,9 +350,11 @@ class SignInActivity : AppCompatActivity() {
     }
 
     fun getUser() {
+        // auto sign in
         val pref = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
         val username = pref.getString(PREF_USERNAME, null)
         val password = pref.getString(PREF_PASSWORD, null)
+
 
         if (username != null || password != null) {
             val path = "api/v1/auth/login"

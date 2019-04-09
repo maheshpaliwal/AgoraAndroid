@@ -11,8 +11,8 @@ class PasswordResetEmailSent : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_password_reset_email_sent)
         // redirect to sign in
-        val redirect_signIn:Button=findViewById<Button>(R.id.btn_signin)
-        redirect_signIn.setOnClickListener{
+        val redirectSignIn:Button=findViewById<Button>(R.id.btn_signin)
+        redirectSignIn.setOnClickListener{
             startActivity(Intent(this@PasswordResetEmailSent,SignInActivity::class.java))
         }
     }

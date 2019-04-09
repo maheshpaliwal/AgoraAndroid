@@ -25,44 +25,44 @@ class SignUpActivity : AppCompatActivity() {
     val email: EditText = findViewById<EditText>(R.id.input_email)
     val password: EditText = findViewById<EditText>(R.id.input_password)
     val signup: Button = findViewById<Button>(R.id.btn_signup)
-    val login_activity: TextView = findViewById<TextView>(R.id.redirect_link_login)
-    login_activity.setOnClickListener{
+    val loginActivity: TextView = findViewById<TextView>(R.id.redirect_link_login)
+    loginActivity.setOnClickListener{
       val intent = Intent(this@SignUpActivity, SignInActivity::class.java)
       startActivity(intent)
     }
     signup.setOnClickListener {
       var error = false
-      val in_userName = userName.getText().toString()
-      val in_firstName = firstName.getText().toString()
-      val in_lastName = lastName.getText().toString()
-      val in_email = email.getText().toString()
-      val in_password = password.getText().toString()
+      val inUserName = userName.getText().toString()
+      val inFirstName = firstName.getText().toString()
+      val inLastName = lastName.getText().toString()
+      val inEmail = email.getText().toString()
+      val inPassword = password.getText().toString()
       // showing appropriate erros
-      if (in_password.isEmpty() || in_password.length < 8) {
+      if (inPassword.isEmpty() || inPassword.length < 8) {
         password.setError("at least 8 characters")
         error = true
       } else {
         password.setError(null)
       }
-      if (in_userName.isEmpty()) {
+      if (inUserName.isEmpty()) {
         userName.setError("This field can't be empty")
         error = true
       } else {
         userName.setError(null)
       }
-      if (in_firstName.isEmpty()) {
+      if (inFirstName.isEmpty()) {
         firstName.setError("This field can't be empty")
         error = true
       } else {
         firstName.setError(null)
       }
-      if (in_lastName.isEmpty()) {
+      if (inLastName.isEmpty()) {
         lastName.setError("This field can't be empty")
         error = true
       } else {
         lastName.setError(null)
       }
-      if (in_email.isEmpty() || !android.util.Patterns.EMAIL_ADDRESS.matcher(in_email).matches()) {
+      if (inEmail.isEmpty() || !android.util.Patterns.EMAIL_ADDRESS.matcher(inEmail).matches()) {
         email.setError("enter a valid email address")
         error = true
       } else {
@@ -77,11 +77,11 @@ class SignUpActivity : AppCompatActivity() {
         // Post parameters
         // Form fields and values
         val params = HashMap<String,String>()
-        params.put("identifier", in_userName)
-        params.put("firstName", in_firstName)
-        params.put("lastName", in_lastName)
-        params.put("email", in_email)
-        params.put("password", in_password)
+        params.put("identifier", inUserName)
+        params.put("firstName", inFirstName)
+        params.put("lastName", inLastName)
+        params.put("email", inEmail)
+        params.put("password", inPassword)
         val jsonObject = JSONObject(params)
         // Volley post request with parameters
         val request = JsonObjectRequest(Request.Method.POST,url+path,jsonObject,

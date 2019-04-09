@@ -84,11 +84,11 @@ class fragment_finished : Fragment() {
                         val format = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'")
                         startTime=arraY_inside.getString("start")
                         endTime=arraY_inside.getString("end")
-                        var current_time:Long=System.currentTimeMillis()
-                        var time_start: Date =format.parse(startTime)
-                        var time_end: Date =format.parse(endTime)
-                        var difference1:Long=time_start.getTime()-current_time
-                        var difference2:Long=time_end.getTime()-current_time
+                        var currentTime:Long=System.currentTimeMillis()
+                        var timeStart: Date =format.parse(startTime)
+                        var timeEnd: Date =format.parse(endTime)
+                        var difference1:Long=timeStart.getTime()-currentTime
+                        var difference2:Long=timeEnd.getTime()-currentTime
                         var status:String=""
                         if(difference1>0&&difference2>0){
                             pending++
@@ -113,8 +113,8 @@ class fragment_finished : Fragment() {
                                 "Election: "+arraY_inside.getString("name"),
                                 arraY_inside.getString("description"),
                                 candidateString,
-                                ""+time_start,status,
-                                ""+time_end
+                                ""+timeStart,status,
+                                ""+timeEnd
                             )
                             elections.add(election)
                             val manager = LinearLayoutManager(context)
@@ -157,5 +157,4 @@ class fragment_finished : Fragment() {
         // Add the volley post request to the request queue
         context?.let { VolleySingleton.getInstance(it).addToRequestQueue(request) }
     }
-
 }

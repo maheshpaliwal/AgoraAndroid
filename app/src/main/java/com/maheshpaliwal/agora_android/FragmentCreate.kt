@@ -17,26 +17,24 @@ class FragmentCreate : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         // defining variables
         // next fragment
-        val button_next: Button= this.btn_next
+        val buttonNext: Button= this.btn_next
         // election title
-        val election_title=this.input_election_name.toString()
+        val electiontitle=this.input_election_name.toString()
         // election description
         val election_description=this.input_description.toString()
-        button_next.setOnClickListener{
+        buttonNext.setOnClickListener{
             val fragment = FragmentCreate2()
             val fragmentManager = activity!!.supportFragmentManager
             val fragmentTransaction = fragmentManager.beginTransaction()
             val args = Bundle()
             // sending data to another fragment
-            args.putString("AGORA_ELECTION_TITLE",election_title)
+            args.putString("AGORA_ELECTION_TITLE",electiontitle)
             args.putString("AGORA_ELECTION_DESCRIPTION",election_description)
             fragment.arguments= args
             fragmentTransaction.replace(R.id.fragmentholder, fragment)
             fragmentTransaction.addToBackStack(null)
             fragmentTransaction.commit()
         }
-
-
         super.onActivityCreated(savedInstanceState)
     }
 
@@ -47,6 +45,4 @@ class FragmentCreate : Fragment() {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_fragment_create, container, false)
     }
-
-
 }

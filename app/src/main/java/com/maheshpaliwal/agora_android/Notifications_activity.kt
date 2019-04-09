@@ -8,35 +8,35 @@ import android.widget.Button
 class Notifications_activity : AppCompatActivity() {
     // Declare Variables
     val manager = supportFragmentManager
-    var user_name: String? = null
-    var first_name: String? = null
-    var last_name: String?=null
-    var email_add: String?=null
-    var avtar_url: String?=null
+    var userName: String? = null
+    var firstName: String? = null
+    var lastName: String?=null
+    var emailAdd: String?=null
+    var avtarUrl: String?=null
     var token: String?=null
-    var expires_on: String?=null
+    var expiresOn: String?=null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_notifications_activity)
         val extras = intent.extras
-        user_name = extras.getString("USER_NAME_AGORA")
-        first_name=extras.getString("FIRST_NAME_AGORA")
-        last_name=extras.getString("LAST_NAME_AGORA")
-        email_add=extras.getString("EMAIL_AGORA")
-        avtar_url=extras.getString("AVATAR_URL_AGORA")
+        userName = extras.getString("USER_NAME_AGORA")
+        firstName=extras.getString("FIRST_NAME_AGORA")
+        lastName=extras.getString("LAST_NAME_AGORA")
+        emailAdd=extras.getString("EMAIL_AGORA")
+        avtarUrl=extras.getString("AVATAR_URL_AGORA")
         token=extras.getString("TOKEN_AGORA")
-        expires_on=extras.getString("EXPIRES_ON_AGORA")
-        val back_button:Button=findViewById<Button>(R.id.back_button)
+        expiresOn=extras.getString("EXPIRES_ON_AGORA")
+        val backButton:Button=findViewById<Button>(R.id.back_button)
         // back button
-        back_button.setOnClickListener{
+        backButton.setOnClickListener{
             val intent= Intent(this@Notifications_activity,Main2Activity::class.java)
-            intent.putExtra("USER_NAME_AGORA",user_name)
-            intent.putExtra("EMAIL_AGORA",email_add)
-            intent.putExtra("FIRST_NAME_AGORA",first_name)
-            intent.putExtra("LAST_NAME_AGORA",last_name)
-            intent.putExtra("AVATAR_URL_AGORA",avtar_url)
+            intent.putExtra("USER_NAME_AGORA",userName)
+            intent.putExtra("EMAIL_AGORA",emailAdd)
+            intent.putExtra("FIRST_NAME_AGORA",firstName)
+            intent.putExtra("LAST_NAME_AGORA",lastName)
+            intent.putExtra("AVATAR_URL_AGORA",avtarUrl)
             intent.putExtra("TOKEN_AGORA",token)
-            intent.putExtra("EXPIRES_ON_AGORA",expires_on)
+            intent.putExtra("EXPIRES_ON_AGORA",expiresOn)
             startActivity(intent)
             startActivity(intent)
         }

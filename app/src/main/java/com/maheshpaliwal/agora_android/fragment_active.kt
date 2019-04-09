@@ -31,11 +31,6 @@ class fragment_active : Fragment() {
         loadactive()
         super.onActivityCreated(savedInstanceState)
     }
-
-
-
-
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -84,11 +79,11 @@ class fragment_active : Fragment() {
                         val format = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'")
                         startTime=arraYInside.getString("start")
                         endTime=arraYInside.getString("end")
-                        var current_time:Long=System.currentTimeMillis()
+                        var currentTime:Long=System.currentTimeMillis()
                         var timeStart: Date =format.parse(startTime)
                         var timeEnd: Date =format.parse(endTime)
-                        var difference1:Long=timeStart.getTime()-current_time
-                        var difference2:Long=timeEnd.getTime()-current_time
+                        var difference1:Long=timeStart.getTime()-currentTime
+                        var difference2:Long=timeEnd.getTime()-currentTime
                         var status:String=""
                         // conditin check for active elections
                         if(difference1>0&&difference2>0){
@@ -144,9 +139,6 @@ class fragment_active : Fragment() {
                 return headers
             }
         }
-
-
-
         // Volley request policy, only one time request to avoid duplicate transaction
         request.retryPolicy = DefaultRetryPolicy(
             DefaultRetryPolicy.DEFAULT_TIMEOUT_MS,

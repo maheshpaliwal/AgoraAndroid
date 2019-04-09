@@ -52,8 +52,8 @@ class fragment_pending : Fragment() {
         //json GET request
         val request: JsonObjectRequest = object : JsonObjectRequest(Request.Method.GET, url+path, null,
             Response.Listener { response ->
-                var start_time:String?=null
-                var end_time:String?=null
+                var startTime:String?=null
+                var endTime:String?=null
                 var all:Int=0
                 var pending:Int=0
                 var finished:Int=0
@@ -82,11 +82,11 @@ class fragment_pending : Fragment() {
                     for (i in 0.. jar.length()-1){
                         var arraY_inside: JSONObject =jar.getJSONObject(i)
                         val format = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'")
-                        start_time=arraY_inside.getString("start")
-                        end_time=arraY_inside.getString("end")
+                        startTime=arraY_inside.getString("start")
+                        endTime=arraY_inside.getString("end")
                         var current_time:Long=System.currentTimeMillis()
-                        var time_start: Date =format.parse(start_time)
-                        var time_end: Date =format.parse(end_time)
+                        var time_start: Date =format.parse(startTime)
+                        var time_end: Date =format.parse(endTime)
                         var difference1:Long=time_start.getTime()-current_time
                         var difference2:Long=time_end.getTime()-current_time
                         var status:String=""
@@ -139,8 +139,8 @@ class fragment_pending : Fragment() {
                     var end_date: Date?=null
                     var difference_date:Long?=null
                     try {
-                        start_date = format.parse(start_time)
-                        end_date=format.parse(end_time)
+                        start_date = format.parse(startTime)
+                        end_date=format.parse(endTime)
                         difference_date=end_date.getTime()-start_date.getTime()
                     } catch (e: ParseException) {
                         e.printStackTrace()
@@ -168,7 +168,6 @@ class fragment_pending : Fragment() {
             5, // DefaultRetryPolicy.DEFAULT_MAX_RETRIES = 2
             1f // DefaultRetryPolicy.DEFAULT_BACKOFF_MULT
         )
-
         // Add the volley post request to the request queue
         context?.let { VolleySingleton.getInstance(it).addToRequestQueue(request) }
     }

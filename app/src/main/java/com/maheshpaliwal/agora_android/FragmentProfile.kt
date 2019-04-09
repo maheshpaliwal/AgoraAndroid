@@ -20,17 +20,17 @@ class FragmentProfile : Fragment() {
         var Name:TextView=this.name
         var Email_add=this.email
         val profile_pic=this.profile_pic
-        val user_name= arguments!!.getString("USER_NAME_AGORA")
-        val first_name= arguments!!.getString("FIRST_NAME_AGORA")
-        val last_name= arguments!!.getString("LAST_NAME_AGORA")
-        val email_add= arguments!!.getString("EMAIL_AGORA")
-        val avtar_url= arguments!!.getString("AVATAR_URL_AGORA")
+        val username= arguments!!.getString("USER_NAME_AGORA")
+        val firstName= arguments!!.getString("FIRST_NAME_AGORA")
+        val lastName= arguments!!.getString("LAST_NAME_AGORA")
+        val emailAdd= arguments!!.getString("EMAIL_AGORA")
+        val avtarurl= arguments!!.getString("AVATAR_URL_AGORA")
         val token= arguments!!.getString("TOKEN_AGORA")
         val expires_on= arguments!!.getString("EXPIRES_ON_AGORA")
-        Picasso.get().load(avtar_url).into(profile_pic)
-        userName.text=user_name
-        Name.text=first_name+last_name
-        Email_add.text=email_add
+        Picasso.get().load(avtarurl).into(profile_pic)
+        userName.text=username
+        Name.text=firstName+lastName
+        Email_add.text=emailAdd
         super.onActivityCreated(savedInstanceState)
     }
     override fun onCreateView(

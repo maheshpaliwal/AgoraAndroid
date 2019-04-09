@@ -29,13 +29,13 @@ import android.content.SharedPreferences
 class Main2Activity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
     // declare variables
     val manager = supportFragmentManager
-    var user_name: String? = null
-    var first_name: String? = null
-    var last_name: String?=null
-    var email_add: String?=null
-    var avtar_url: String?=null
+    var userName: String? = null
+    var firstName: String? = null
+    var lastName: String?=null
+    var emailAdd: String?=null
+    var avtarUrl: String?=null
     var token: String?=null
-    var expires_on: String?=null
+    var expiresOn: String?=null
     var PREFS_NAME = "mypre"
     var PREF_USERNAME = "identifier"
     var PREF_PASSWORD = "password"
@@ -72,44 +72,44 @@ class Main2Activity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
             if (extras == null) {
 
             } else {
-                user_name = extras.getString("USER_NAME_AGORA")
-                first_name=extras.getString("FIRST_NAME_AGORA")
-                last_name=extras.getString("LAST_NAME_AGORA")
-                email_add=extras.getString("EMAIL_AGORA")
-                avtar_url=extras.getString("AVATAR_URL_AGORA")
+                userName = extras.getString("USER_NAME_AGORA")
+                firstName=extras.getString("FIRST_NAME_AGORA")
+                lastName=extras.getString("LAST_NAME_AGORA")
+                emailAdd=extras.getString("EMAIL_AGORA")
+                avtarUrl=extras.getString("AVATAR_URL_AGORA")
                 token=extras.getString("TOKEN_AGORA")
-                expires_on=extras.getString("EXPIRES_ON_AGORA")
+                expiresOn=extras.getString("EXPIRES_ON_AGORA")
 
             }
         } else {
-            user_name = savedInstanceState.getSerializable("USER_NAME_AGORA") as String
-            first_name=savedInstanceState.getSerializable("FIRST_NAME_AGORA") as String
-            last_name=savedInstanceState.getSerializable("LAST_NAME_AGORA") as String
-            email_add=savedInstanceState.getSerializable("EMAIL_AGORA") as String
-            avtar_url=savedInstanceState.getSerializable("AVATAR_URL_AGORA") as String
+            userName = savedInstanceState.getSerializable("USER_NAME_AGORA") as String
+            firstName=savedInstanceState.getSerializable("FIRST_NAME_AGORA") as String
+            lastName=savedInstanceState.getSerializable("LAST_NAME_AGORA") as String
+            emailAdd=savedInstanceState.getSerializable("EMAIL_AGORA") as String
+            avtarUrl=savedInstanceState.getSerializable("AVATAR_URL_AGORA") as String
             token=savedInstanceState.getSerializable("TOKEN_AGORA") as String
-            expires_on=savedInstanceState.getSerializable("EXPIRES_ON_AGORA") as String
+            expiresOn=savedInstanceState.getSerializable("EXPIRES_ON_AGORA") as String
         }
         // dashboard as default fragment
         FragmentOne()
         val navigationView = findViewById<View>(R.id.nav_view) as NavigationView
         val headerView:View = navigationView.getHeaderView(0)
         val navEmail:TextView = headerView.findViewById<TextView>(R.id.email_header)
-        navEmail.text=email_add
+        navEmail.text=emailAdd
         val navUsername:TextView=headerView.findViewById<TextView>(R.id.user_name_navigation)
-        navUsername.text=user_name
+        navUsername.text=userName
         val nav_profile:ImageView=headerView.findViewById<ImageView>(R.id.imageView)
-        Picasso.get().load(avtar_url).into(nav_profile)
+        Picasso.get().load(avtarUrl).into(nav_profile)
         val notifications_button:ImageView=findViewById<ImageView>(R.id.notification_action_bar)
         notifications_button.setOnClickListener{
             val intent=Intent(this@Main2Activity,Notifications_activity::class.java)
-            intent.putExtra("USER_NAME_AGORA",user_name)
-            intent.putExtra("EMAIL_AGORA",email_add)
-            intent.putExtra("FIRST_NAME_AGORA",first_name)
-            intent.putExtra("LAST_NAME_AGORA",last_name)
-            intent.putExtra("AVATAR_URL_AGORA",avtar_url)
+            intent.putExtra("USER_NAME_AGORA",userName)
+            intent.putExtra("EMAIL_AGORA",emailAdd)
+            intent.putExtra("FIRST_NAME_AGORA",firstName)
+            intent.putExtra("LAST_NAME_AGORA",lastName)
+            intent.putExtra("AVATAR_URL_AGORA",avtarUrl)
             intent.putExtra("TOKEN_AGORA",token)
-            intent.putExtra("EXPIRES_ON_AGORA",expires_on)
+            intent.putExtra("EXPIRES_ON_AGORA",expiresOn)
             startActivity(intent)
 
         }
@@ -173,13 +173,13 @@ class Main2Activity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
         val fragment= FragmentDashboard()
         val args = Bundle()
         // sending arguments
-        args.putString("USER_NAME_AGORA",user_name)
-        args.putString("EMAIL_AGORA",email_add)
-        args.putString("FIRST_NAME_AGORA",first_name)
-        args.putString("LAST_NAME_AGORA",last_name)
-        args.putString("AVATAR_URL_AGORA",avtar_url)
+        args.putString("USER_NAME_AGORA",userName)
+        args.putString("EMAIL_AGORA",emailAdd)
+        args.putString("FIRST_NAME_AGORA",firstName)
+        args.putString("LAST_NAME_AGORA",lastName)
+        args.putString("AVATAR_URL_AGORA",avtarUrl)
         args.putString("TOKEN_AGORA",token)
-        args.putString("EXPIRES_ON_AGORA",expires_on)
+        args.putString("EXPIRES_ON_AGORA",expiresOn)
         fragment.arguments= args
         transaction.replace(R.id.fragmentholder,fragment)
         transaction.addToBackStack(null)
@@ -190,13 +190,13 @@ class Main2Activity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
         val transaction = manager.beginTransaction()
         val fragment= FragmentAbout()
         val args = Bundle()
-        args.putString("USER_NAME_AGORA",user_name)
-        args.putString("EMAIL_AGORA",email_add)
-        args.putString("FIRST_NAME_AGORA",first_name)
-        args.putString("LAST_NAME_AGORA",last_name)
-        args.putString("AVATAR_URL_AGORA",avtar_url)
+        args.putString("USER_NAME_AGORA",userName)
+        args.putString("EMAIL_AGORA",emailAdd)
+        args.putString("FIRST_NAME_AGORA",firstName)
+        args.putString("LAST_NAME_AGORA",lastName)
+        args.putString("AVATAR_URL_AGORA",avtarUrl)
         args.putString("TOKEN_AGORA",token)
-        args.putString("EXPIRES_ON_AGORA",expires_on)
+        args.putString("EXPIRES_ON_AGORA",expiresOn)
         fragment.arguments= args
         transaction.replace(R.id.fragmentholder,fragment)
         transaction.addToBackStack(null)
@@ -215,13 +215,13 @@ class Main2Activity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
         val transaction = manager.beginTransaction()
         val fragment= FragmentProfile()
         val args = Bundle()
-        args.putString("USER_NAME_AGORA",user_name)
-        args.putString("EMAIL_AGORA",email_add)
-        args.putString("FIRST_NAME_AGORA",first_name)
-        args.putString("LAST_NAME_AGORA",last_name)
-        args.putString("AVATAR_URL_AGORA",avtar_url)
+        args.putString("USER_NAME_AGORA",userName)
+        args.putString("EMAIL_AGORA",emailAdd)
+        args.putString("FIRST_NAME_AGORA",firstName)
+        args.putString("LAST_NAME_AGORA",lastName)
+        args.putString("AVATAR_URL_AGORA",avtarUrl)
         args.putString("TOKEN_AGORA",token)
-        args.putString("EXPIRES_ON_AGORA",expires_on)
+        args.putString("EXPIRES_ON_AGORA",expiresOn)
         fragment.arguments= args
         transaction.replace(R.id.fragmentholder,fragment)
         transaction.addToBackStack(null)
@@ -232,13 +232,13 @@ class Main2Activity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
         val transaction = manager.beginTransaction()
         val fragment= FragmentCreate()
         val args = Bundle()
-        args.putString("USER_NAME_AGORA",user_name)
-        args.putString("EMAIL_AGORA",email_add)
-        args.putString("FIRST_NAME_AGORA",first_name)
-        args.putString("LAST_NAME_AGORA",last_name)
-        args.putString("AVATAR_URL_AGORA",avtar_url)
+        args.putString("USER_NAME_AGORA",userName)
+        args.putString("EMAIL_AGORA",emailAdd)
+        args.putString("FIRST_NAME_AGORA",firstName)
+        args.putString("LAST_NAME_AGORA",lastName)
+        args.putString("AVATAR_URL_AGORA",avtarUrl)
         args.putString("TOKEN_AGORA",token)
-        args.putString("EXPIRES_ON_AGORA",expires_on)
+        args.putString("EXPIRES_ON_AGORA",expiresOn)
         fragment.arguments= args
         transaction.replace(R.id.fragmentholder,fragment)
         transaction.addToBackStack(null)
@@ -249,13 +249,13 @@ class Main2Activity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
         val transaction = manager.beginTransaction()
         val fragment= FragmentElection()
         val args = Bundle()
-        args.putString("USER_NAME_AGORA",user_name)
-        args.putString("EMAIL_AGORA",email_add)
-        args.putString("FIRST_NAME_AGORA",first_name)
-        args.putString("LAST_NAME_AGORA",last_name)
-        args.putString("AVATAR_URL_AGORA",avtar_url)
+        args.putString("USER_NAME_AGORA",userName)
+        args.putString("EMAIL_AGORA",emailAdd)
+        args.putString("FIRST_NAME_AGORA",firstName)
+        args.putString("LAST_NAME_AGORA",lastName)
+        args.putString("AVATAR_URL_AGORA",avtarUrl)
         args.putString("TOKEN_AGORA",token)
-        args.putString("EXPIRES_ON_AGORA",expires_on)
+        args.putString("EXPIRES_ON_AGORA",expiresOn)
         fragment.arguments= args
         transaction.replace(R.id.fragmentholder,fragment)
         transaction.addToBackStack(null)

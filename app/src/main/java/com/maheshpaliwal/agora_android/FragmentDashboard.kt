@@ -29,10 +29,10 @@ class FragmentDashboard : Fragment() {
         //token
         val token= arguments!!.getString("TOKEN_AGORA")
         mShimmerViewContainer = this.shimemer_view_container
-        val all_election:TextView=this.count
-        val pending_election:TextView=this.count2
-        val active_election:TextView=this.count3
-        val finished_election:TextView=this.count4
+        val allElection:TextView=this.count
+        val pendingElection:TextView=this.count2
+        val activeElection:TextView=this.count3
+        val finishedElection:TextView=this.count4
         val text:TextView=this.total_finished
         val path = "api/v1/election"
         val url = "https://agora-rest-api.herokuapp.com/"
@@ -45,10 +45,10 @@ class FragmentDashboard : Fragment() {
                 var finished:Int=0
                 var active:Int=0
                 if(response.getJSONArray("elections").length()==0){
-                   all_election.text=""+0
-                   pending_election.text=""+0
-                   active_election.text=""+0
-                   finished_election.text=""+0
+                   allElection.text=""+0
+                   pendingElection.text=""+0
+                   activeElection.text=""+0
+                   finishedElection.text=""+0
                    mShimmerViewContainer!!.stopShimmer()
                    mShimmerViewContainer!!.visibility=View.GONE
                }
@@ -60,11 +60,11 @@ class FragmentDashboard : Fragment() {
                     val format = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'")
                     start_time=arraY_inside.getString("start")
                     end_time=arraY_inside.getString("end")
-                    var current_time:Long=System.currentTimeMillis()
-                    var time_start:Date=format.parse(start_time)
-                    var time_end:Date=format.parse(end_time)
-                    var difference1:Long=time_start.getTime()-current_time
-                    var difference2:Long=time_end.getTime()-current_time
+                    var currentTime:Long=System.currentTimeMillis()
+                    var timeStart:Date=format.parse(start_time)
+                    var timeEnd:Date=format.parse(end_time)
+                    var difference1:Long=timeStart.getTime()-currentTime
+                    var difference2:Long=timeEnd.getTime()-currentTime
                     if(difference1>0&&difference2>0){
                         pending++
                     }
@@ -77,10 +77,10 @@ class FragmentDashboard : Fragment() {
                 }
                     mShimmerViewContainer!!.stopShimmer()
                     mShimmerViewContainer!!.visibility=View.GONE
-                    all_election.text=""+all
-                    pending_election.text=""+pending
-                    active_election.text=""+active
-                    finished_election.text=""+finished
+                    allElection.text=""+all
+                    pendingElection.text=""+pending
+                    activeElection.text=""+active
+                    finishedElection.text=""+finished
                 }
             }, Response.ErrorListener { error ->
                 //showing errors

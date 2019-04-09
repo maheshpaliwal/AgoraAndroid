@@ -20,53 +20,53 @@ import java.util.*
 class FragmentCreate2 : Fragment() {
     // declare variables
     // start date
-    var editText_date: TextView? = null
+    var startDate: TextView? = null
     // end date
-    var end_date:TextView?=null
+    var endDate:TextView?=null
     // calendar
     var cal = Calendar.getInstance()
     // start time
-    var start_time:String?=null
+    var startTime:String?=null
     // end time
-    var end_time:String?=null
+    var endtime:String?=null
     override fun onActivityCreated(savedInstanceState: Bundle?) {
-        val button_next:Button=this.btn_next
-        val button_prev:Button=this.btn_prev
-        val election_name=arguments!!.getString("AGORA_ELECTION_TITLE")
-        val election_desc=arguments!!.getString("AGORA_ELECTION_DESCRIPTION")
+        val buttonNext:Button=this.btn_next
+        val buttonPrev:Button=this.btn_prev
+        val electionName=arguments!!.getString("AGORA_ELECTION_TITLE")
+        val electionDesc=arguments!!.getString("AGORA_ELECTION_DESCRIPTION")
         // next
-        button_next.setOnClickListener{
+        buttonNext.setOnClickListener{
             val fragment = FragmentCreate3()
             val fragmentManager = activity!!.supportFragmentManager
             val fragmentTransaction = fragmentManager.beginTransaction()
             val args = Bundle()
-            args.putString("START_TIME",start_time)
-            args.putString("END_TIME",end_time)
-            args.putString("AGORA_ELECTION_TITLE",election_name)
-            args.putString("AGORA_ELECTION_DESCRIPTION",election_desc)
+            args.putString("START_TIME",startTime)
+            args.putString("END_TIME",endtime)
+            args.putString("AGORA_ELECTION_TITLE",electionName)
+            args.putString("AGORA_ELECTION_DESCRIPTION",electionDesc)
             fragment.arguments= args
             fragmentTransaction.replace(R.id.fragmentholder, fragment)
             fragmentTransaction.addToBackStack(null)
             fragmentTransaction.commit()
         }
         // previous
-        button_prev.setOnClickListener{
+        buttonPrev.setOnClickListener{
             val fragment = FragmentCreate()
             val fragmentManager = activity!!.supportFragmentManager
             val fragmentTransaction = fragmentManager.beginTransaction()
             val args = Bundle()
-            args.putString("START_TIME",start_time)
-            args.putString("END_TIME",end_time)
-            args.putString("AGORA_ELECTION_TITLE",election_name)
-            args.putString("AGORA_ELECTION_DESCRIPTION",election_desc)
+            args.putString("START_TIME",startTime)
+            args.putString("END_TIME",endtime)
+            args.putString("AGORA_ELECTION_TITLE",electionName)
+            args.putString("AGORA_ELECTION_DESCRIPTION",electionDesc)
             fragment.arguments= args
             fragmentTransaction.replace(R.id.fragmentholder, fragment)
             fragmentTransaction.addToBackStack(null)
             fragmentTransaction.commit()
 
         }
-        editText_date = this.input_start_date
-        end_date=this.input_end_date
+        startDate = this.input_start_date
+        endDate=this.input_end_date
         // date listner starting date
         val dateSetListener = object : DatePickerDialog.OnDateSetListener {
             override fun onDateSet(view: DatePicker, year: Int, monthOfYear: Int,
@@ -87,16 +87,16 @@ class FragmentCreate2 : Fragment() {
                 updateDateInView2()
             }
         }
-        editText_date!!.setOnClickListener(object : View.OnClickListener {
+        startDate!!.setOnClickListener(object : View.OnClickListener {
             override fun onClick(view: View) {
                 val timeSetListner = TimePickerDialog.OnTimeSetListener { timePicker, hour, minute ->
                     cal.set(Calendar.HOUR_OF_DAY, hour)
                     cal.set(Calendar.MINUTE, minute)
-                    editText_date!!.text =editText_date!!.text.toString()+","+ SimpleDateFormat("HH:mm").format(cal.time)
+                    startDate!!.text =startDate!!.text.toString()+","+ SimpleDateFormat("HH:mm").format(cal.time)
                     val sdf= SimpleDateFormat("HH:MM:SS")
                     sdf.timeZone= TimeZone.getTimeZone("UTC")
 
-                    start_time+=sdf.format(cal.time)+"Z"
+                    startTime+=sdf.format(cal.time)+"Z"
 
 
                 }
@@ -111,15 +111,15 @@ class FragmentCreate2 : Fragment() {
         })
 
 
-        end_date!!.setOnClickListener(object : View.OnClickListener {
+        endDate!!.setOnClickListener(object : View.OnClickListener {
             override fun onClick(view: View) {
                 val timeSetListner = TimePickerDialog.OnTimeSetListener { timePicker, hour, minute ->
                     cal.set(Calendar.HOUR_OF_DAY, hour)
                     cal.set(Calendar.MINUTE, minute)
-                    end_date!!.text =end_date!!.text.toString()+","+ SimpleDateFormat("HH:mm").format(cal.time)
+                    endDate!!.text =endDate!!.text.toString()+","+ SimpleDateFormat("HH:mm").format(cal.time)
                     val sdf= SimpleDateFormat("HH:MM:SS")
                     sdf.timeZone= TimeZone.getTimeZone("UTC")
-                    end_time+=sdf.format(cal.time)+"Z"
+                    endtime+=sdf.format(cal.time)+"Z"
                 }
                 TimePickerDialog(context,timeSetListner, cal.get(Calendar.HOUR),cal.get(Calendar.MINUTE),true).show()
                 DatePickerDialog(context,
@@ -145,8 +145,8 @@ class FragmentCreate2 : Fragment() {
        val sdf = SimpleDateFormat(myFormat, Locale.US)
        val sdf2=SimpleDateFormat(myFormat)
        sdf2.timeZone= TimeZone.getTimeZone("UTC")
-       editText_date!!.text= sdf.format(cal.getTime())
-       start_time=sdf2.format(cal.getTime())+'T'
+       startDate!!.text= sdf.format(cal.getTime())
+       startTime=sdf2.format(cal.getTime())+'T'
     }
 
     private fun updateDateInView2() {
@@ -155,8 +155,8 @@ class FragmentCreate2 : Fragment() {
         val sdf = SimpleDateFormat(myFormat, Locale.US)
         val sdf2=SimpleDateFormat(myFormat)
         sdf2.timeZone=TimeZone.getTimeZone("UTC")
-        end_date!!.text=sdf.format(cal.getTime())
-        end_time=sdf2.format(cal.getTime())
+        endDate!!.text=sdf.format(cal.getTime())
+        endtime=sdf2.format(cal.getTime())
     }
 
 

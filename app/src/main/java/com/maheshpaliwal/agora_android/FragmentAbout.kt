@@ -11,7 +11,6 @@ import android.view.ViewGroup
 // Fragment for about Agora details
 class FragmentAbout : Fragment() {
 
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -19,6 +18,4 @@ class FragmentAbout : Fragment() {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_fragment_about, container, false)
     }
-
-
 }

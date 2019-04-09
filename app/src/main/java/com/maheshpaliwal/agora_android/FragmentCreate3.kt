@@ -24,24 +24,24 @@ class FragmentCreate3 : Fragment() {
         // declare variables
         val editText:EditText=this.input_candidate_name
         var textView:TextView=this.input_cand
-        val button_next:Button=this.btn_next
-        val button_prev:Button=this.btn_prev
-        val start_time=arguments!!.getString("START_TIME")
-        val end_time=arguments!!.getString("END_TIME")
-        val election_name=arguments!!.getString("AGORA_ELECTION_TITLE")
-        val election_desc=arguments!!.getString("AGORA_ELECTION_DESCRIPTION")
+        val buttonNext:Button=this.btn_next
+        val buttonPrev:Button=this.btn_prev
+        val startTime=arguments!!.getString("START_TIME")
+        val endTime=arguments!!.getString("END_TIME")
+        val electionName=arguments!!.getString("AGORA_ELECTION_TITLE")
+        val electionDesc=arguments!!.getString("AGORA_ELECTION_DESCRIPTION")
         var candidate:Array<String>?=null
         //next
-        button_next.setOnClickListener{
+        buttonNext.setOnClickListener{
             val fragment = FragmentCreate4()
             val fragmentManager = activity!!.supportFragmentManager
             val fragmentTransaction = fragmentManager.beginTransaction()
             val args = Bundle()
             //putting data
-            args.putString("START_TIME",start_time)
-            args.putString("END_TIME",end_time)
-            args.putString("AGORA_ELECTION_TITLE",election_name)
-            args.putString("AGORA_ELECTION_DESCRIPTION",election_desc)
+            args.putString("START_TIME",startTime)
+            args.putString("END_TIME",endTime)
+            args.putString("AGORA_ELECTION_TITLE",electionName)
+            args.putString("AGORA_ELECTION_DESCRIPTION",electionDesc)
             args.putStringArray("AGORA_CANDIDATE",candidate)
             fragment.arguments= args
             fragmentTransaction.replace(R.id.fragmentholder, fragment)
@@ -49,16 +49,16 @@ class FragmentCreate3 : Fragment() {
             fragmentTransaction.commit()
         }
         //previous
-        button_prev.setOnClickListener{
+        buttonPrev.setOnClickListener{
             val fragment = FragmentCreate2()
             val fragmentManager = activity!!.supportFragmentManager
             val fragmentTransaction = fragmentManager.beginTransaction()
             val args = Bundle()
             //putting data
-            args.putString("START_TIME",start_time)
-            args.putString("END_TIME",end_time)
-            args.putString("AGORA_ELECTION_TITLE",election_name)
-            args.putString("AGORA_ELECTION_DESCRIPTION",election_desc)
+            args.putString("START_TIME",startTime)
+            args.putString("END_TIME",endTime)
+            args.putString("AGORA_ELECTION_TITLE",electionName)
+            args.putString("AGORA_ELECTION_DESCRIPTION",electionDesc)
             args.putStringArray("AGORA_CANDIDATE",candidate)
             fragment.arguments= args
             fragmentTransaction.replace(R.id.fragmentholder, fragment)

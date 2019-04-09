@@ -13,24 +13,24 @@ import kotlinx.android.synthetic.main.fragment_fragment_create4.*
 // Step 4 of creating elections
 class FragmentCreate4 : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
-        val button_next: Button =this.btn_next
-        val button_prev:Button=this.btn_prev
-        val start_time=arguments!!.getString("START_TIME")
-        val end_time=arguments!!.getString("END_TIME")
-        val election_name=arguments!!.getString("AGORA_ELECTION_TITLE")
-        val election_desc=arguments!!.getString("AGORA_ELECTION_DESCRIPTION")
+        val buttonNext: Button =this.btn_next
+        val buttonPrev:Button=this.btn_prev
+        val startTime=arguments!!.getString("START_TIME")
+        val endTime=arguments!!.getString("END_TIME")
+        val electionName=arguments!!.getString("AGORA_ELECTION_TITLE")
+        val electionDesc=arguments!!.getString("AGORA_ELECTION_DESCRIPTION")
         val candidate=arguments!!.getStringArray("AGORA_CANDIDATE")
         val mySpinner:Spinner=this.spinner1
         val algorithm=mySpinner.getSelectedItem().toString()
-        button_next.setOnClickListener{
+        buttonNext.setOnClickListener{
             val fragment = FragmentCreate5()
             val fragmentManager = activity!!.supportFragmentManager
             val fragmentTransaction = fragmentManager.beginTransaction()
             val args = Bundle()
-            args.putString("START_TIME",start_time)
-            args.putString("END_TIME",end_time)
-            args.putString("AGORA_ELECTION_TITLE",election_name)
-            args.putString("AGORA_ELECTION_DESCRIPTION",election_desc)
+            args.putString("START_TIME",startTime)
+            args.putString("END_TIME",endTime)
+            args.putString("AGORA_ELECTION_TITLE",electionName)
+            args.putString("AGORA_ELECTION_DESCRIPTION",electionDesc)
             args.putStringArray("AGORA_CANDIDATE",candidate)
             args.putString("AGORA_ALGORITHM",algorithm)
             fragment.arguments= args
@@ -38,15 +38,15 @@ class FragmentCreate4 : Fragment() {
             fragmentTransaction.addToBackStack(null)
             fragmentTransaction.commit()
         }
-        button_prev.setOnClickListener{
+        buttonPrev.setOnClickListener{
             val fragment = FragmentCreate3()
             val fragmentManager = activity!!.supportFragmentManager
             val fragmentTransaction = fragmentManager.beginTransaction()
             val args = Bundle()
-            args.putString("START_TIME",start_time)
-            args.putString("END_TIME",end_time)
-            args.putString("AGORA_ELECTION_TITLE",election_name)
-            args.putString("AGORA_ELECTION_DESCRIPTION",election_desc)
+            args.putString("START_TIME",startTime)
+            args.putString("END_TIME",endTime)
+            args.putString("AGORA_ELECTION_TITLE",electionName)
+            args.putString("AGORA_ELECTION_DESCRIPTION",electionDesc)
             args.putStringArray("AGORA_CANDIDATE",candidate)
             args.putString("AGORA_ALGORITHM",algorithm)
             fragment.arguments= args

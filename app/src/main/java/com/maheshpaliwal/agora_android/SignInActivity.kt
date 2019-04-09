@@ -41,25 +41,25 @@ class SignInActivity : AppCompatActivity() {
         //define variables
         val userName: EditText = findViewById<EditText>(R.id.input_userName)
         val password: EditText = findViewById<EditText>(R.id.input_password)
-        val signin: Button = findViewById<Button>(R.id.btn_signin)
+        val signIn: Button = findViewById<Button>(R.id.btn_signin)
         val progressBar: ProgressBar =findViewById<ProgressBar>(R.id.progress_bar)
-        val reset_password:TextView=findViewById<TextView>(R.id.forgot_password)
-        val button_fb:Button=findViewById<Button>(R.id.login_button_fb)
-        val show_password:ImageButton=findViewById<ImageButton>(R.id.show_password)
-        val hide_password:ImageButton=findViewById<ImageButton>(R.id.hide_password)
+        val resetPassword:TextView=findViewById<TextView>(R.id.forgot_password)
+        val buttonFb:Button=findViewById<Button>(R.id.login_button_fb)
+        val showPassword:ImageButton=findViewById<ImageButton>(R.id.show_password)
+        val hidePassword:ImageButton=findViewById<ImageButton>(R.id.hide_password)
         val signup:TextView=findViewById<TextView>(R.id.btn_signup)
-        show_password.setOnClickListener{
+        showPassword.setOnClickListener{
             // Show Password
             password.setTransformationMethod(HideReturnsTransformationMethod.getInstance())
-            hide_password.visibility=View.VISIBLE
-            show_password.visibility=View.GONE
+            hidePassword.visibility=View.VISIBLE
+            showPassword.visibility=View.GONE
 
         }
-        hide_password.setOnClickListener{
+        hidePassword.setOnClickListener{
             // hide password
             password.setTransformationMethod(PasswordTransformationMethod.getInstance())
-            hide_password.visibility=View.GONE
-            show_password.visibility=View.VISIBLE
+            hidePassword.visibility=View.GONE
+            showPassword.visibility=View.VISIBLE
 
 
         }
@@ -86,7 +86,7 @@ class SignInActivity : AppCompatActivity() {
 
 
         t.start()
-        button_fb.setOnClickListener{
+        buttonFb.setOnClickListener{
             //facebook sign In
             callbackManager = CallbackManager.Factory.create()
             LoginManager.getInstance().logInWithReadPermissions(this, Arrays.asList("public_profile", "email"))
@@ -142,7 +142,7 @@ class SignInActivity : AppCompatActivity() {
         }
 
 
-     reset_password.setOnClickListener{
+     resetPassword.setOnClickListener{
         // redirect to reset password
 
          val intent=Intent(this@SignInActivity,ForgotPasswordActivity::class.java)
@@ -153,7 +153,7 @@ class SignInActivity : AppCompatActivity() {
             startActivity(intent)
 
         }
-        signin.setOnClickListener{
+        signIn.setOnClickListener{
             // verify user credentials
             var error = false
             val in_userName = userName.getText().toString()
@@ -175,7 +175,7 @@ class SignInActivity : AppCompatActivity() {
             }
             // if there is no error in user input
             if (error == false) {
-                signin.visibility= View.GONE
+                signIn.visibility= View.GONE
                 progressBar.visibility=View.VISIBLE
                 val path = "api/v1/auth/login"
                 val url = "https://agora-rest-api.herokuapp.com/"
@@ -191,7 +191,7 @@ class SignInActivity : AppCompatActivity() {
                         // Process the json
                         try {
                             progressBar.visibility=View.GONE
-                            signin.visibility=View.VISIBLE
+                            signIn.visibility=View.VISIBLE
                             val obj:JSONObject = response
                             val username:String=obj.getString("username")
                             val email:String=obj.getString("email")
@@ -219,14 +219,14 @@ class SignInActivity : AppCompatActivity() {
                             finish()
                         }catch (e:Exception){
                             progressBar.visibility=View.GONE
-                            signin.visibility=View.VISIBLE
+                            signIn.visibility=View.VISIBLE
                             Toast.makeText(this,"$e",Toast.LENGTH_LONG).show()
                         }
 
                     }, Response.ErrorListener{
                         // Error in request
                         progressBar.visibility=View.GONE
-                        signin.visibility=View.VISIBLE
+                        signIn.visibility=View.VISIBLE
                         if(it.toString().contains("com.android.volley.AuthFailureError")){
                             displayToast("Username or Password is incorrect")
                         }

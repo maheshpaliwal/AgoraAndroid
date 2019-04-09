@@ -9,7 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 
 
-
+// Fragment for showing election results
 class fragment_results : Fragment() {
 
     override fun onCreateView(

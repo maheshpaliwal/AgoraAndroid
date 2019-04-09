@@ -9,11 +9,9 @@ import android.view.ViewGroup
 import android.widget.Button
 import kotlinx.android.synthetic.main.fragment_fragment_create5.*
 
-
+// last step of creating election
 class FragmentCreate5 : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
-
-
         val button_next: Button =this.btn_next
         val button_prev:Button=this.btn_prev
         val start_time=arguments!!.getString("START_TIME")
@@ -22,14 +20,10 @@ class FragmentCreate5 : Fragment() {
         val election_desc=arguments!!.getString("AGORA_ELECTION_DESCRIPTION")
         val candidate=arguments!!.getStringArray("AGORA_CANDIDATE")
         val algorithm=arguments!!.getString("AGORA_ALGORITHM")
-
+        //finish election
         button_next.setOnClickListener{
-
-
-
         }
         button_prev.setOnClickListener{
-
             val fragment = FragmentCreate4()
             val fragmentManager = activity!!.supportFragmentManager
             val fragmentTransaction = fragmentManager.beginTransaction()
@@ -44,11 +38,9 @@ class FragmentCreate5 : Fragment() {
             fragmentTransaction.replace(R.id.fragmentholder, fragment)
             fragmentTransaction.addToBackStack(null)
             fragmentTransaction.commit()
-
         }
         super.onActivityCreated(savedInstanceState)
     }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

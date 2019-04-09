@@ -8,9 +8,8 @@ import android.view.View
 import android.view.ViewGroup
 
 
-
+// Showing Basic Details
 class fragment_basic : Fragment() {
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

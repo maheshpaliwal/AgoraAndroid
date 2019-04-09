@@ -8,7 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 
 
-
+// showing voters list
 class fragment_voters : Fragment() {
 
     override fun onCreateView(

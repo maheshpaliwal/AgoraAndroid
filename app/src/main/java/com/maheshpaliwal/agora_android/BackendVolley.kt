@@ -5,13 +5,14 @@ import android.text.TextUtils
 import com.android.volley.Request
 import com.android.volley.RequestQueue
 import com.android.volley.toolbox.Volley
-//Backend volley
+//volley library adding request to request queue etc.
 class BackendVolley : Application() {
+    //on Create
     override fun onCreate() {
         super.onCreate()
         instance = this
     }
-
+    // initializing requestQueue
     val requestQueue: RequestQueue? = null
         get() {
             if (field == null) {
@@ -19,7 +20,7 @@ class BackendVolley : Application() {
             }
             return field
         }
-
+     // adding request to request queue
     fun <T> addToRequestQueue(request: Request<T>, tag: String) {
         request.tag = if (TextUtils.isEmpty(tag)) TAG else tag
         requestQueue?.add(request)
@@ -29,7 +30,7 @@ class BackendVolley : Application() {
         request.tag = TAG
         requestQueue?.add(request)
     }
-
+    // Cancel Pending requests
     fun cancelPendingRequests(tag: Any) {
         if (requestQueue != null) {
             requestQueue!!.cancelAll(tag)

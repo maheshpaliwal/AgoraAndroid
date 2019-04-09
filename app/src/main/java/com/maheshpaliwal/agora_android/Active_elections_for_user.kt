@@ -6,11 +6,8 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.TextView
 import kotlinx.android.synthetic.main.fragment_active_elections_for_user.*
-import kotlinx.android.synthetic.main.fragment_fragment_create.*
-import org.w3c.dom.Text
 
 
 // Fragment for showing active elections for user
@@ -18,12 +15,13 @@ import org.w3c.dom.Text
 class Active_elections_for_user : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
-
-        val button_cast: TextView= this.cast_vote
-        val button_range:TextView=this.cast_vote2
-        val button_score:TextView=this.cast_vote3
+        //initialize required variables
+        val button_cast: TextView= this.cast_vote// preferential ballot redirect button
+        val button_range:TextView=this.cast_vote2 // range ballot redirect button
+        val button_score:TextView=this.cast_vote3 // score ballot redirect button
+        // seting onClickListener
         button_cast.setOnClickListener{
-             /* Calling cast vote */
+             /* Calling preferential ballot */
             val fragment = Cast_vote()
             val fragmentManager = activity!!.supportFragmentManager
             val fragmentTransaction = fragmentManager.beginTransaction()
@@ -33,6 +31,7 @@ class Active_elections_for_user : Fragment() {
 
 
         }
+            // calling range ballot
         button_range.setOnClickListener{
             val fragment = range_seekbar()
             val fragmentManager = activity!!.supportFragmentManager
@@ -43,6 +42,7 @@ class Active_elections_for_user : Fragment() {
 
 
         }
+        // calling score ballot
         button_score.setOnClickListener{
             val fragment = score_voting()
             val fragmentManager = activity!!.supportFragmentManager

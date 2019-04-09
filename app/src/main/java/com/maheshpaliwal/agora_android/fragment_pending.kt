@@ -26,24 +26,15 @@ import android.support.v7.widget.RecyclerView
 import android.widget.RelativeLayout
 import kotlinx.android.synthetic.main.fragment_fragment_pending.*
 
-
+// Fragment for showing pending elections
 class fragment_pending : Fragment() {
     var recyclerView: RecyclerView?=null
-
     override fun onActivityCreated(savedInstanceState: Bundle?) {
-
-          recyclerView=this.recycler_view
-
-
+        recyclerView=this.recycler_view
+        // calling function to load pending elections data
         loadpending()
-
-
-
-
         super.onActivityCreated(savedInstanceState)
     }
-
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -52,34 +43,21 @@ class fragment_pending : Fragment() {
         return inflater.inflate(R.layout.fragment_fragment_pending, container, false)
     }
     fun loadpending(){
-
-
-
+        // token
         val token= arguments!!.getString("TOKEN_AGORA")
-
+        //path
         val path = "api/v1/election"
-
-
+        //url
         val url = "https://agora-rest-api.herokuapp.com/"
-
-
-
-
-
-
-
-
-        val jsonObject = JSONObject()
+        //json GET request
         val request: JsonObjectRequest = object : JsonObjectRequest(Request.Method.GET, url+path, null,
             Response.Listener { response ->
-
                 var start_time:String?=null
                 var end_time:String?=null
                 var all:Int=0
                 var pending:Int=0
                 var finished:Int=0
                 var active:Int=0
-
                 if(response.getJSONArray("elections").length()==0){
                     val elections=ArrayList<Election_info>()
                     val election=Election_info(
@@ -90,27 +68,21 @@ class fragment_pending : Fragment() {
                         "ACTIVE","2019-04-25, 10:30:40 AM"
                     )
                     elections.add(election)
-
                     val manager = LinearLayoutManager(context)
                     var recyclerView=this.recycler_view
                     if(recyclerView==null){}
                     else{
                         recyclerView.layoutManager = manager
                         recyclerView.adapter=ElectionCardAdapter(elections)}
-
-
-
                 }
                 else{
                     val jar: JSONArray =response.getJSONArray("elections")
                     all=jar.length()
                     val elections= ArrayList<Election_info>()
                     for (i in 0.. jar.length()-1){
-
                         var arraY_inside: JSONObject =jar.getJSONObject(i)
                         val format = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'")
                         start_time=arraY_inside.getString("start")
-
                         end_time=arraY_inside.getString("end")
                         var current_time:Long=System.currentTimeMillis()
                         var time_start: Date =format.parse(start_time)
@@ -134,10 +106,6 @@ class fragment_pending : Fragment() {
                                 candidate_string,
                                 ""+time_start,status,
                                 ""+time_end
-
-
-
-
                             )
                             if(pending==0){
 
@@ -152,40 +120,14 @@ class fragment_pending : Fragment() {
                             else{
                                 recyclerView.layoutManager = manager
                                 recyclerView.adapter=ElectionCardAdapter(elections)}}
-
-
-
-
                         }
                         else if(difference1<=0&&difference2>=0){
                             active++
                             status="ACTIVE"
-
-
                         }
                         else if(difference1<0&&difference2<0){
-
                             finished++
-                            status="FINISHED"
-
-                        }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                            status="FINISHED" }
 
                     }
 
@@ -200,28 +142,14 @@ class fragment_pending : Fragment() {
                         start_date = format.parse(start_time)
                         end_date=format.parse(end_time)
                         difference_date=end_date.getTime()-start_date.getTime()
-
-
                     } catch (e: ParseException) {
-                        // TODO Auto-generated catch block
                         e.printStackTrace()
                     }
-
-                   }
-
-
-
-
-
-
-
+                }
             }, Response.ErrorListener { error ->
-
+                // showing error
                 Toast.makeText(context,"$error", Toast.LENGTH_LONG).show()
-
-
             }) {
-
             /**
              * Passing some request headers
              */
@@ -233,9 +161,6 @@ class fragment_pending : Fragment() {
                 return headers
             }
         }
-
-
-
         // Volley request policy, only one time request to avoid duplicate transaction
         request.retryPolicy = DefaultRetryPolicy(
             DefaultRetryPolicy.DEFAULT_TIMEOUT_MS,
@@ -245,10 +170,6 @@ class fragment_pending : Fragment() {
         )
 
         // Add the volley post request to the request queue
-
-
         context?.let { VolleySingleton.getInstance(it).addToRequestQueue(request) }
     }
-
-
 }

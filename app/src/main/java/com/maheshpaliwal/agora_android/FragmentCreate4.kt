@@ -10,11 +10,9 @@ import android.widget.Button
 import android.widget.Spinner
 import kotlinx.android.synthetic.main.fragment_fragment_create4.*
 
-
+// Step 4 of creating elections
 class FragmentCreate4 : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
-
-
         val button_next: Button =this.btn_next
         val button_prev:Button=this.btn_prev
         val start_time=arguments!!.getString("START_TIME")
@@ -24,7 +22,6 @@ class FragmentCreate4 : Fragment() {
         val candidate=arguments!!.getStringArray("AGORA_CANDIDATE")
         val mySpinner:Spinner=this.spinner1
         val algorithm=mySpinner.getSelectedItem().toString()
-
         button_next.setOnClickListener{
             val fragment = FragmentCreate5()
             val fragmentManager = activity!!.supportFragmentManager
@@ -40,11 +37,8 @@ class FragmentCreate4 : Fragment() {
             fragmentTransaction.replace(R.id.fragmentholder, fragment)
             fragmentTransaction.addToBackStack(null)
             fragmentTransaction.commit()
-
-
         }
         button_prev.setOnClickListener{
-
             val fragment = FragmentCreate3()
             val fragmentManager = activity!!.supportFragmentManager
             val fragmentTransaction = fragmentManager.beginTransaction()
@@ -71,6 +65,4 @@ class FragmentCreate4 : Fragment() {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_fragment_create4, container, false)
     }
-
-
 }

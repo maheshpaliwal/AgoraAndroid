@@ -1,9 +1,7 @@
 package com.maheshpaliwal.agora_android
 
 import android.app.Dialog
-import android.content.Context
-import android.content.Intent
-import android.os.Bundle
+
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
@@ -12,15 +10,16 @@ import android.widget.TextView
 import com.maheshpaliwal.agora_android.model.Election_info
 import android.support.v7.app.AppCompatActivity
 import android.view.Window
-import android.widget.Button
+
 import android.widget.ImageButton
 
 
-// election card adapter to fill election information like election name etc in recyclerview
+// election card adapter to fill election information ( Array list) like election name etc in recycler view
 class ElectionCardAdapter (private val election_info:ArrayList<Election_info>): RecyclerView.Adapter<ElectionCardAdapter.ViewHolder>() {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, p1: Int): ViewHolder {
+        // defining election card layout
         val view = LayoutInflater.from(parent.context).inflate(R.layout.election_card, parent, false)
 
 
@@ -35,63 +34,65 @@ class ElectionCardAdapter (private val election_info:ArrayList<Election_info>): 
 
 
 
-          // setting information to election using recieved data by volley
+        // setting information to election using recieved data by volley
+        // set title text
         holder.title.text = election_info[p1].title
+        // aet description text
         holder.description.text = election_info[p1].description
+        // set candidates text
         holder.candidates.text = election_info[p1].candidates
+        // set start text
         holder.start.text = election_info[p1].start
+        // set end text
         holder.end.text = election_info[p1].end
+        // set status
         holder.status.text = election_info[p1].status
-        holder.view_button.setOnClickListener(object : View.OnClickListener{
+        // click handling on view button
+        holder.viewButton.setOnClickListener(object : View.OnClickListener{
             override fun onClick(p0: View?) {
                 val manager= (p0!!.context as AppCompatActivity).supportFragmentManager
                 val transaction = manager.beginTransaction()
+                // redirect to election details tabbed activity
                 val fragment= ElectionDetails()
-
                 transaction.replace(R.id.fragmentholder,fragment)
                 transaction.addToBackStack(null)
                 transaction.commit()
             }
-
-
-
         })
-        holder.edit_button.setOnClickListener(object : View.OnClickListener{
+        // click handling on editbutton
+        holder.editButton.setOnClickListener(object : View.OnClickListener{
             override fun onClick(p0: View?) {
-
-
+                // showing pop up overlay
                 var  dialog =  Dialog(p0!!.context)
                 dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
                 dialog.setContentView(R.layout.custom_layout)
                 dialog.setCanceledOnTouchOutside(false)
                 dialog.setCancelable(true)
                 dialog.show()
+                // dismiss dialog
                 val close_button: ImageButton =dialog.findViewById<ImageButton>(R.id.close)
                 close_button.setOnClickListener{
-
                     dialog.dismiss()
-
                 }
             }
 
 
 
         })
-        holder.delete_button.setOnClickListener(object : View.OnClickListener{
+        // click handling on delete button
+        holder.deleteButton.setOnClickListener(object : View.OnClickListener{
             override fun onClick(p0: View?) {
-
-
+                // showing pop up overlay
                 var  dialog =  Dialog(p0!!.context)
                 dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
                 dialog.setContentView(R.layout.custom_layout_delete)
                 dialog.setCanceledOnTouchOutside(false)
                 dialog.setCancelable(true)
                 dialog.show()
+                //dismiss dialog
                 val close_button: ImageButton =dialog.findViewById<ImageButton>(R.id.close)
                 close_button.setOnClickListener{
-
                     dialog.dismiss()
-
                 }
             }
 
@@ -125,9 +126,12 @@ class ElectionCardAdapter (private val election_info:ArrayList<Election_info>): 
         val end: TextView = itemView.findViewById(R.id.end_time)
             // status
         val status: TextView = itemView.findViewById(R.id.status)
-        val view_button:TextView=itemView.findViewById(R.id.view)
-        val edit_button:TextView=itemView.findViewById(R.id.edit)
-        val delete_button:TextView=itemView.findViewById(R.id.delete)
+        // view button
+        val viewButton:TextView=itemView.findViewById(R.id.view)
+        // edit button
+        val editButton:TextView=itemView.findViewById(R.id.edit)
+        // delete Button
+        val deleteButton:TextView=itemView.findViewById(R.id.delete)
 
     }
 }

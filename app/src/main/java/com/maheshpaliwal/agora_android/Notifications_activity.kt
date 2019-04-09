@@ -4,8 +4,9 @@ import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
-
+// Notifications Activity
 class Notifications_activity : AppCompatActivity() {
+    // Declare Variables
     val manager = supportFragmentManager
     var user_name: String? = null
     var first_name: String? = null
@@ -14,7 +15,6 @@ class Notifications_activity : AppCompatActivity() {
     var avtar_url: String?=null
     var token: String?=null
     var expires_on: String?=null
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_notifications_activity)
@@ -27,6 +27,7 @@ class Notifications_activity : AppCompatActivity() {
         token=extras.getString("TOKEN_AGORA")
         expires_on=extras.getString("EXPIRES_ON_AGORA")
         val back_button:Button=findViewById<Button>(R.id.back_button)
+        // back button
         back_button.setOnClickListener{
             val intent= Intent(this@Notifications_activity,Main2Activity::class.java)
             intent.putExtra("USER_NAME_AGORA",user_name)
@@ -38,8 +39,6 @@ class Notifications_activity : AppCompatActivity() {
             intent.putExtra("EXPIRES_ON_AGORA",expires_on)
             startActivity(intent)
             startActivity(intent)
-
         }
-
     }
 }

@@ -7,17 +7,18 @@ import android.content.SharedPreferences
 // responsible for running intro once
 class AgoraWelcomePrefManager(internal var context2: Context) {
 
-
-    internal var pref: SharedPreferences
-    internal var editor: SharedPreferences.Editor
-
+    // variable SharedPreference
+    private var pref: SharedPreferences
+    // shared preference editor
+    private var editor: SharedPreferences.Editor
     // shared pref mode
-    internal var PRIVATE_MODE = 0
-
+    private var PRIVATE_MODE = 0
+  // if First time launch is true then store true  inside editor
     fun setFirstTimeLaunch(isFirstTime: Boolean) {
         editor.putBoolean(IS_FIRST_TIME_LAUNCH, isFirstTime)
         editor.commit()
     }
+
 
     fun isFirstTimeLaunch(): Boolean {
         return pref.getBoolean(IS_FIRST_TIME_LAUNCH, true)

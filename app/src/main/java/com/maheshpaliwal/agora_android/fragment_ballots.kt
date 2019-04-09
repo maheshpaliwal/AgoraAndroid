@@ -7,7 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 
-
+// Showing Ballots Details
 
 class fragment_ballots : Fragment() {
 

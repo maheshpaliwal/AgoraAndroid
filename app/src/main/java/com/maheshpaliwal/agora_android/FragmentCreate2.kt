@@ -16,19 +16,25 @@ import org.xml.sax.InputSource
 import java.text.SimpleDateFormat
 import java.util.*
 
-
+// Step 2 of creating election
 class FragmentCreate2 : Fragment() {
+    // declare variables
+    // start date
     var editText_date: TextView? = null
+    // end date
     var end_date:TextView?=null
+    // calendar
     var cal = Calendar.getInstance()
+    // start time
     var start_time:String?=null
+    // end time
     var end_time:String?=null
     override fun onActivityCreated(savedInstanceState: Bundle?) {
-
         val button_next:Button=this.btn_next
         val button_prev:Button=this.btn_prev
         val election_name=arguments!!.getString("AGORA_ELECTION_TITLE")
         val election_desc=arguments!!.getString("AGORA_ELECTION_DESCRIPTION")
+        // next
         button_next.setOnClickListener{
             val fragment = FragmentCreate3()
             val fragmentManager = activity!!.supportFragmentManager
@@ -42,11 +48,9 @@ class FragmentCreate2 : Fragment() {
             fragmentTransaction.replace(R.id.fragmentholder, fragment)
             fragmentTransaction.addToBackStack(null)
             fragmentTransaction.commit()
-
-
         }
+        // previous
         button_prev.setOnClickListener{
-
             val fragment = FragmentCreate()
             val fragmentManager = activity!!.supportFragmentManager
             val fragmentTransaction = fragmentManager.beginTransaction()
@@ -61,22 +65,19 @@ class FragmentCreate2 : Fragment() {
             fragmentTransaction.commit()
 
         }
-
         editText_date = this.input_start_date
         end_date=this.input_end_date
-
+        // date listner starting date
         val dateSetListener = object : DatePickerDialog.OnDateSetListener {
             override fun onDateSet(view: DatePicker, year: Int, monthOfYear: Int,
                                    dayOfMonth: Int) {
                 cal.set(Calendar.YEAR, year)
                 cal.set(Calendar.MONTH, monthOfYear)
                 cal.set(Calendar.DAY_OF_MONTH, dayOfMonth)
-
                 updateDateInView()
-
             }
-
         }
+        // date listner end date
         val dateSetListener2= object : DatePickerDialog.OnDateSetListener {
             override fun onDateSet(view: DatePicker, year: Int, monthOfYear: Int,
                                    dayOfMonth: Int) {
@@ -84,10 +85,7 @@ class FragmentCreate2 : Fragment() {
                 cal.set(Calendar.MONTH, monthOfYear)
                 cal.set(Calendar.DAY_OF_MONTH, dayOfMonth)
                 updateDateInView2()
-
-                }
-
-
+            }
         }
         editText_date!!.setOnClickListener(object : View.OnClickListener {
             override fun onClick(view: View) {
@@ -109,9 +107,7 @@ class FragmentCreate2 : Fragment() {
                     cal.get(Calendar.YEAR),
                     cal.get(Calendar.MONTH),
                     cal.get(Calendar.DAY_OF_MONTH)).show()
-
             }
-
         })
 
 
@@ -123,10 +119,7 @@ class FragmentCreate2 : Fragment() {
                     end_date!!.text =end_date!!.text.toString()+","+ SimpleDateFormat("HH:mm").format(cal.time)
                     val sdf= SimpleDateFormat("HH:MM:SS")
                     sdf.timeZone= TimeZone.getTimeZone("UTC")
-
                     end_time+=sdf.format(cal.time)+"Z"
-
-
                 }
                 TimePickerDialog(context,timeSetListner, cal.get(Calendar.HOUR),cal.get(Calendar.MINUTE),true).show()
                 DatePickerDialog(context,
@@ -134,12 +127,9 @@ class FragmentCreate2 : Fragment() {
                     // set DatePickerDialog to point to today's date when it loads up
                     cal.get(Calendar.YEAR),
                     cal.get(Calendar.MONTH),
-                    cal.get(Calendar.DAY_OF_MONTH)).show()
-            }
+                    cal.get(Calendar.DAY_OF_MONTH)).show() }
 
         })
-
-
         super.onActivityCreated(savedInstanceState)
     }
 
@@ -147,20 +137,15 @@ class FragmentCreate2 : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
-
-
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_fragment_create2, container, false)
     }
    private fun updateDateInView() {
-
-        val myFormat = "yyyy-MM-dd" // mention the format you need
-        val sdf = SimpleDateFormat(myFormat, Locale.US)
+       val myFormat = "yyyy-MM-dd" // mention the format you need
+       val sdf = SimpleDateFormat(myFormat, Locale.US)
        val sdf2=SimpleDateFormat(myFormat)
        sdf2.timeZone= TimeZone.getTimeZone("UTC")
-
-        editText_date!!.text= sdf.format(cal.getTime())
+       editText_date!!.text= sdf.format(cal.getTime())
        start_time=sdf2.format(cal.getTime())+'T'
     }
 
@@ -168,12 +153,8 @@ class FragmentCreate2 : Fragment() {
 
         val myFormat = "yyyy-MM-dd" // mention the format you need
         val sdf = SimpleDateFormat(myFormat, Locale.US)
-
-
         val sdf2=SimpleDateFormat(myFormat)
         sdf2.timeZone=TimeZone.getTimeZone("UTC")
-
-
         end_date!!.text=sdf.format(cal.getTime())
         end_time=sdf2.format(cal.getTime())
     }

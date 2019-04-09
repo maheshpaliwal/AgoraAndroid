@@ -1,28 +1,22 @@
 package com.maheshpaliwal.agora_android
 
 
-import android.content.Context
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import android.widget.Toast
 import com.android.volley.AuthFailureError
 import com.android.volley.DefaultRetryPolicy
 import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.JsonObjectRequest
-import com.maheshpaliwal.agora_android.R.attr.layoutManager
-import com.maheshpaliwal.agora_android.R.id.recycler_view
 import com.maheshpaliwal.agora_android.model.Election_info
 import kotlinx.android.synthetic.main.fragment_fragment_all.*
-import kotlinx.android.synthetic.main.fragment_fragment_dashboard.*
 import org.json.JSONArray
 import org.json.JSONObject
-import java.text.ParseException
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -30,9 +24,8 @@ import java.util.*
 
 class fragment_all : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
-
+        // load all elections data
         loadAll()
-
         super.onActivityCreated(savedInstanceState)
     }
 
@@ -45,29 +38,17 @@ class fragment_all : Fragment() {
         return inflater.inflate(R.layout.fragment_fragment_all, container, false)
     }
     fun loadAll(){
-
-
-
         val token= arguments!!.getString("TOKEN_AGORA")
-
         val path = "api/v1/election"
-
-
         val url = "https://agora-rest-api.herokuapp.com/"
-
-
-
-        val jsonObject = JSONObject()
         val request = object : JsonObjectRequest(Request.Method.GET, url+path, null,
             Response.Listener { response ->
-
-                var start_time:String?=null
-                var end_time:String?=null
+                var startTime:String?=null
+                var endTime:String?=null
                 var all:Int=0
                 var pending:Int=0
                 var finished:Int=0
                 var active:Int=0
-
                 if(response.getJSONArray("elections").length()==0){
                     val elections=ArrayList<Election_info>()
                     val election=Election_info(
@@ -84,44 +65,33 @@ class fragment_all : Fragment() {
                     else{
                         recyclerView.layoutManager = manager
                         recyclerView.adapter=ElectionCardAdapter(elections)}
-
-
                 }
                 else{
                     val jar: JSONArray =response.getJSONArray("elections")
                     all=jar.length()
                     val elections=ArrayList<Election_info>()
                     for (i in 0.. jar.length()-1){
-
                         var arraY_inside: JSONObject =jar.getJSONObject(i)
                         val format = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'")
-                        start_time=arraY_inside.getString("start")
-
-                        end_time=arraY_inside.getString("end")
+                        startTime=arraY_inside.getString("start")
+                        endTime=arraY_inside.getString("end")
                         var current_time:Long=System.currentTimeMillis()
-                        var time_start: Date =format.parse(start_time)
-                        var time_end: Date =format.parse(end_time)
-                        var difference1:Long=time_start.getTime()-current_time
-                        var difference2:Long=time_end.getTime()-current_time
+                        var timeStart: Date =format.parse(startTime)
+                        var timeEnd: Date =format.parse(endTime)
+                        var difference1:Long=timeStart.getTime()-current_time
+                        var difference2:Long=timeEnd.getTime()-current_time
                         var status:String=""
                         if(difference1>0&&difference2>0){
                             pending++
                             status="PENDING"
-
-
-
                         }
                         else if(difference1<=0&&difference2>=0){
                             active++
                             status="ACTIVE"
-
-
                         }
                         else if(difference1<0&&difference2<0){
-
                             finished++
                             status="FINISHED"
-
                         }
                         var candidate:JSONArray=arraY_inside.getJSONArray("candidates")
                         var l:Int=candidate.length()
@@ -134,50 +104,21 @@ class fragment_all : Fragment() {
                             "Election: "+arraY_inside.getString("name"),
                             arraY_inside.getString("description"),
                             candidate_string,
-                            ""+time_start,status,
-                            ""+time_end
-
-
-
-
+                            ""+timeStart,status,
+                            ""+timeEnd
                         )
                         elections.add(election)
-
                         val manager = LinearLayoutManager(context)
                         var recyclerView=this.recycler_view
                         if(recyclerView==null){}
                         else{
                             recyclerView.layoutManager = manager
                             recyclerView.adapter=ElectionCardAdapter(elections)}
-
-
-
-
-
-
-
-
-
-
-
                     }
-
-
-
-
-                   }
-
-
-
-
-
-
+                }
 
             }, Response.ErrorListener { error ->
-
                 Toast.makeText(context,"$error", Toast.LENGTH_LONG).show()
-
-
             }) {
 
             /**
@@ -191,9 +132,6 @@ class fragment_all : Fragment() {
                 return headers
             }
         }
-
-
-
         // Volley request policy, only one time request to avoid duplicate transaction
         request.retryPolicy = DefaultRetryPolicy(
             DefaultRetryPolicy.DEFAULT_TIMEOUT_MS,
@@ -201,10 +139,7 @@ class fragment_all : Fragment() {
             5, // DefaultRetryPolicy.DEFAULT_MAX_RETRIES = 2
             1f // DefaultRetryPolicy.DEFAULT_BACKOFF_MULT
         )
-
         // Add the volley post request to the request queue
-
-
         context?.let { VolleySingleton.getInstance(it).addToRequestQueue(request) }
     }
 

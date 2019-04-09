@@ -8,7 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 
-
+// App Intro slide 2
 class fragment_slide_2 : Fragment() {
 
     override fun onCreateView(

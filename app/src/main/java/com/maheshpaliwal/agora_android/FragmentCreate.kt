@@ -10,30 +10,30 @@ import android.view.ViewGroup
 import android.widget.Button
 import kotlinx.android.synthetic.main.fragment_fragment_create.*
 
-
+// Fragment for creating elections
 class FragmentCreate : Fragment() {
 
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
-
-
+        // defining variables
+        // next fragment
         val button_next: Button= this.btn_next
+        // election title
         val election_title=this.input_election_name.toString()
+        // election description
         val election_description=this.input_description.toString()
         button_next.setOnClickListener{
-
             val fragment = FragmentCreate2()
             val fragmentManager = activity!!.supportFragmentManager
             val fragmentTransaction = fragmentManager.beginTransaction()
             val args = Bundle()
+            // sending data to another fragment
             args.putString("AGORA_ELECTION_TITLE",election_title)
             args.putString("AGORA_ELECTION_DESCRIPTION",election_description)
             fragment.arguments= args
             fragmentTransaction.replace(R.id.fragmentholder, fragment)
             fragmentTransaction.addToBackStack(null)
             fragmentTransaction.commit()
-
-
         }
 
 

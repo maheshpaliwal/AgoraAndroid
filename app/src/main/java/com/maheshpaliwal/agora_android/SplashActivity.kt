@@ -15,6 +15,7 @@ import com.android.volley.Response
 import com.android.volley.toolbox.JsonObjectRequest
 import org.json.JSONObject
 import java.util.HashMap
+// Splash Activity
 
 class SplashActivity : AppCompatActivity() {
     private var mDelayHandler: Handler? = null
@@ -22,10 +23,8 @@ class SplashActivity : AppCompatActivity() {
     var PREFS_NAME = "mypre"
     var PREF_USERNAME = "identifier"
     var PREF_PASSWORD = "password"
-
     internal val mRunnable: Runnable = Runnable {
         if (!isFinishing) {
-
             val intent = Intent(applicationContext, SignInActivity::class.java)
             startActivity(intent)
             finish()
@@ -35,10 +34,8 @@ class SplashActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
         mDelayHandler = Handler()
-
         //Navigate with delay
         mDelayHandler!!.postDelayed(mRunnable, SPLASH_DELAY)
-
     }
 
     override fun onStart() {
@@ -46,42 +43,31 @@ class SplashActivity : AppCompatActivity() {
         super.onStart()
     }
     public override fun onDestroy() {
-
         if (mDelayHandler != null) {
             mDelayHandler!!.removeCallbacks(mRunnable)
         }
-
         super.onDestroy()
     }
+    // getting user and auto logging in
     fun getUser() {
         val pref = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
         val username = pref.getString(PREF_USERNAME, null)
         val password = pref.getString(PREF_PASSWORD, null)
-
         if (username != null || password != null) {
             val path = "api/v1/auth/login"
-
-
             val url = "https://agora-rest-api.herokuapp.com/"
-
-
             // Post parameters
             // Form fields and values
             val params = HashMap<String,String>()
             params.put("identifier", username)
-
             params.put("password", password)
-
             val jsonObject = JSONObject(params)
-
             // Volley post request with parameters
             val request = JsonObjectRequest(Request.Method.POST,url+path,jsonObject,
                 Response.Listener { response ->
                     // Process the json
                     try {
-
                         val obj: JSONObject = response
-
                         val username:String=obj.getString("username")
                         val email:String=obj.getString("email")
                         val firstName:String=obj.getString("firstName")
@@ -103,37 +89,18 @@ class SplashActivity : AppCompatActivity() {
                         intent.putExtra("AVATAR_URL_AGORA",avtarURL)
                         intent.putExtra("TOKEN_AGORA",token)
                         intent.putExtra("EXPIRES_ON_AGORA",expireson)
-
                         startActivity(intent)
                         finish()
-
-
-
-
                     }catch (e:Exception){
-
-
-
-
-
                     }
 
                 }, Response.ErrorListener{
                     // Error in request
-
-
-
-
                     if(it.toString().contains("com.android.volley.AuthFailureError")){
                         displayToast("Username or Password is incorrect")
-
-
                     }
                     else{
-
-
                        }
-
                 })
 
 
@@ -144,7 +111,6 @@ class SplashActivity : AppCompatActivity() {
                 DefaultRetryPolicy.DEFAULT_MAX_RETRIES, // DefaultRetryPolicy.DEFAULT_MAX_RETRIES = 2
                 DefaultRetryPolicy.DEFAULT_BACKOFF_MULT // DefaultRetryPolicy.DEFAULT_BACKOFF_MULT
             )
-
             // Add the volley post request to the request queue
             VolleySingleton.getInstance(this).addToRequestQueue(request)
 

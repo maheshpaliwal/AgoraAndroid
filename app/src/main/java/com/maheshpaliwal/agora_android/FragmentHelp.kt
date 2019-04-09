@@ -9,10 +9,9 @@ import android.view.ViewGroup
 
 
 
-
+// Fragment help
 
 class FragmentHelp : Fragment() {
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

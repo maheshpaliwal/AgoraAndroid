@@ -8,14 +8,14 @@ import android.view.View
 import android.view.ViewGroup
 
 
-/* Cast vote fragment for casting of vote */
+/* Preferential Ballot */
 class Cast_vote : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
+        // Inflate the layout for preferential ballot
         return inflater.inflate(R.layout.fragment_cast_vote, container, false)
     }
 

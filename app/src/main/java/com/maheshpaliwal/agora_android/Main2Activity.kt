@@ -25,8 +25,9 @@ import android.content.SharedPreferences
 
 
 
-
+// Main Activity of agora vote contains navigation drawer & bottom navigation
 class Main2Activity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+    // declare variables
     val manager = supportFragmentManager
     var user_name: String? = null
     var first_name: String? = null
@@ -38,30 +39,24 @@ class Main2Activity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
     var PREFS_NAME = "mypre"
     var PREF_USERNAME = "identifier"
     var PREF_PASSWORD = "password"
-    
 
     private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
             R.id.navigation_dashboard-> {
                 FragmentOne()
-
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_create_election->{
                 FragmentFive()
-
                 return@OnNavigationItemSelectedListener true
             }
 
             R.id.navigation_elections-> {
                 FragmentSix()
-
-
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_profile-> {
                 FragmentFour()
-
                 return@OnNavigationItemSelectedListener true
             }
         }
@@ -71,12 +66,7 @@ class Main2Activity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main2)
         setSupportActionBar(toolbar)
-
-
-
-
-
-
+        // getting saved instances
         if (savedInstanceState == null) {
             val extras = intent.extras
             if (extras == null) {
@@ -100,6 +90,7 @@ class Main2Activity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
             token=savedInstanceState.getSerializable("TOKEN_AGORA") as String
             expires_on=savedInstanceState.getSerializable("EXPIRES_ON_AGORA") as String
         }
+        // dashboard as default fragment
         FragmentOne()
         val navigationView = findViewById<View>(R.id.nav_view) as NavigationView
         val headerView:View = navigationView.getHeaderView(0)
@@ -109,8 +100,7 @@ class Main2Activity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
         navUsername.text=user_name
         val nav_profile:ImageView=headerView.findViewById<ImageView>(R.id.imageView)
         Picasso.get().load(avtar_url).into(nav_profile)
-
-       val notifications_button:ImageView=findViewById<ImageView>(R.id.notification_action_bar)
+        val notifications_button:ImageView=findViewById<ImageView>(R.id.notification_action_bar)
         notifications_button.setOnClickListener{
             val intent=Intent(this@Main2Activity,Notifications_activity::class.java)
             intent.putExtra("USER_NAME_AGORA",user_name)
@@ -124,7 +114,6 @@ class Main2Activity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
 
         }
 
-
         val toggle = ActionBarDrawerToggle(
             this, drawer_layout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close
         )
@@ -132,7 +121,6 @@ class Main2Activity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
         drawer_layout.addDrawerListener(toggle)
         toggle.syncState()
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
-
         nav_view.setNavigationItemSelectedListener(this)
     }
 
@@ -149,33 +137,24 @@ class Main2Activity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
         menuInflater.inflate(R.menu.main2, menu)
         return true
     }
-
-
-
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         // Handle navigation view item clicks here.
         when (item.itemId) {
             R.id.navigation_cast_vote->{
-
-            FragmentEight()
-
+                FragmentEight()
             }
             R.id.nav_about-> {
                 FragmentTwo()
             }
             R.id.nav_help -> {
                 FragmentThree()
-
             }
-
             R.id.nav_logout -> {
                 val pref = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
                 val editor = pref.edit()
                 editor.clear()
                 editor.commit()
-
                 startActivity(Intent(this@Main2Activity,SignInActivity::class.java))
-
             }
             R.id.nav_share -> {
 
@@ -188,10 +167,12 @@ class Main2Activity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
         drawer_layout.closeDrawer(GravityCompat.START)
         return true
     }
+    // Dashboard Fragment
     fun FragmentOne(){
         val transaction = manager.beginTransaction()
         val fragment= FragmentDashboard()
         val args = Bundle()
+        // sending arguments
         args.putString("USER_NAME_AGORA",user_name)
         args.putString("EMAIL_AGORA",email_add)
         args.putString("FIRST_NAME_AGORA",first_name)
@@ -203,10 +184,8 @@ class Main2Activity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
         transaction.replace(R.id.fragmentholder,fragment)
         transaction.addToBackStack(null)
         transaction.commit()
-
-
-
     }
+    // Fragment Abput
     fun FragmentTwo(){
         val transaction = manager.beginTransaction()
         val fragment= FragmentAbout()
@@ -222,25 +201,19 @@ class Main2Activity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
         transaction.replace(R.id.fragmentholder,fragment)
         transaction.addToBackStack(null)
         transaction.commit()
-
-
-
     }
+    // Fragment Help
     fun FragmentThree(){
         val transaction = manager.beginTransaction()
         val fragment= FragmentHelp()
         transaction.replace(R.id.fragmentholder,fragment)
         transaction.addToBackStack(null)
         transaction.commit()
-
-
-
     }
+    // Fragment Profile
     fun FragmentFour(){
         val transaction = manager.beginTransaction()
         val fragment= FragmentProfile()
-
-
         val args = Bundle()
         args.putString("USER_NAME_AGORA",user_name)
         args.putString("EMAIL_AGORA",email_add)
@@ -253,10 +226,8 @@ class Main2Activity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
         transaction.replace(R.id.fragmentholder,fragment)
         transaction.addToBackStack(null)
         transaction.commit()
-
-
-
     }
+    // Fragment create elections
     fun FragmentFive(){
         val transaction = manager.beginTransaction()
         val fragment= FragmentCreate()
@@ -272,10 +243,8 @@ class Main2Activity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
         transaction.replace(R.id.fragmentholder,fragment)
         transaction.addToBackStack(null)
         transaction.commit()
-
-
-
     }
+    // fragment elections
     fun FragmentSix(){
         val transaction = manager.beginTransaction()
         val fragment= FragmentElection()
@@ -291,21 +260,10 @@ class Main2Activity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
         transaction.replace(R.id.fragmentholder,fragment)
         transaction.addToBackStack(null)
         transaction.commit()
-
-
-
     }
-    fun fragmentSeven(){
 
-        val transaction = manager.beginTransaction()
-        val fragment= FragmentCreate2()
-        transaction.replace(R.id.fragmentholder,fragment)
-        transaction.addToBackStack(null)
-        transaction.commit()
-
-    }
+    // Fragment Active elections for user
     fun FragmentEight(){
-
         val transaction = manager.beginTransaction()
         val fragment= Active_elections_for_user()
         transaction.replace(R.id.fragmentholder,fragment)

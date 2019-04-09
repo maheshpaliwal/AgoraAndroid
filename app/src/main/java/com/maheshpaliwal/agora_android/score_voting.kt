@@ -8,9 +8,8 @@ import android.view.View
 import android.view.ViewGroup
 
 
-
+// Score Ballot
 class score_voting : Fragment() {
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

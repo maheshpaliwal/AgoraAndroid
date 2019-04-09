@@ -10,7 +10,6 @@ import android.view.ViewGroup
 
 /* Preferential Ballot */
 class Cast_vote : Fragment() {
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -18,6 +17,4 @@ class Cast_vote : Fragment() {
         // Inflate the layout for preferential ballot
         return inflater.inflate(R.layout.fragment_cast_vote, container, false)
     }
-
-
 }

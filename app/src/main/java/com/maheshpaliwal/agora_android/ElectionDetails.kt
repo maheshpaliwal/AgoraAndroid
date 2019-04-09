@@ -12,7 +12,6 @@ import android.view.ViewGroup
 // Tabbed activity to show election details such as basic, voter, ballots, results
 
 class ElectionDetails : Fragment() {
-
     override fun onActivityCreated(
         savedInstanceState: Bundle?) {
         // initializing variables
@@ -49,16 +48,12 @@ class ElectionDetails : Fragment() {
         })
         super.onActivityCreated(savedInstanceState)
     }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_election_details, container, false)
 
     }
-
-
 }

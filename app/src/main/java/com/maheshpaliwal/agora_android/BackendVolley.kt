@@ -25,7 +25,6 @@ class BackendVolley : Application() {
         request.tag = if (TextUtils.isEmpty(tag)) TAG else tag
         requestQueue?.add(request)
     }
-
     fun <T> addToRequestQueue(request: Request<T>) {
         request.tag = TAG
         requestQueue?.add(request)
@@ -36,7 +35,6 @@ class BackendVolley : Application() {
             requestQueue!!.cancelAll(tag)
         }
     }
-
     companion object {
         private val TAG = BackendVolley::class.java.simpleName
         @get:Synchronized

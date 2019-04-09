@@ -16,11 +16,11 @@ class Active_elections_for_user : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         //initialize required variables
-        val button_cast: TextView= this.cast_vote// preferential ballot redirect button
-        val button_range:TextView=this.cast_vote2 // range ballot redirect button
-        val button_score:TextView=this.cast_vote3 // score ballot redirect button
+        val buttonCast: TextView= this.cast_vote// preferential ballot redirect button
+        val buttonRange:TextView=this.cast_vote2 // range ballot redirect button
+        val buttonScore:TextView=this.cast_vote3 // score ballot redirect button
         // seting onClickListener
-        button_cast.setOnClickListener{
+        buttonCast.setOnClickListener{
              /* Calling preferential ballot */
             val fragment = Cast_vote()
             val fragmentManager = activity!!.supportFragmentManager
@@ -28,30 +28,24 @@ class Active_elections_for_user : Fragment() {
             fragmentTransaction.replace(R.id.fragmentholder, fragment)
             fragmentTransaction.addToBackStack(null)
             fragmentTransaction.commit()
-
-
         }
             // calling range ballot
-        button_range.setOnClickListener{
+        buttonRange.setOnClickListener{
             val fragment = range_seekbar()
             val fragmentManager = activity!!.supportFragmentManager
             val fragmentTransaction = fragmentManager.beginTransaction()
             fragmentTransaction.replace(R.id.fragmentholder, fragment)
             fragmentTransaction.addToBackStack(null)
             fragmentTransaction.commit()
-
-
         }
         // calling score ballot
-        button_score.setOnClickListener{
+        buttonScore.setOnClickListener{
             val fragment = score_voting()
             val fragmentManager = activity!!.supportFragmentManager
             val fragmentTransaction = fragmentManager.beginTransaction()
             fragmentTransaction.replace(R.id.fragmentholder, fragment)
             fragmentTransaction.addToBackStack(null)
             fragmentTransaction.commit()
-
-
         }
         super.onActivityCreated(savedInstanceState)
     }
@@ -63,6 +57,4 @@ class Active_elections_for_user : Fragment() {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_active_elections_for_user, container, false)
     }
-
-
 }

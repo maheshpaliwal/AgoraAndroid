@@ -16,24 +16,15 @@ import android.widget.ImageButton
 
 // election card adapter to fill election information ( Array list) like election name etc in recycler view
 class ElectionCardAdapter (private val election_info:ArrayList<Election_info>): RecyclerView.Adapter<ElectionCardAdapter.ViewHolder>() {
-
-
     override fun onCreateViewHolder(parent: ViewGroup, p1: Int): ViewHolder {
         // defining election card layout
         val view = LayoutInflater.from(parent.context).inflate(R.layout.election_card, parent, false)
-
-
-
         return ViewHolder(view)
-
     }
 
     override fun getItemCount() = election_info.size
 
     override fun onBindViewHolder(holder: ElectionCardAdapter.ViewHolder, p1: Int) {
-
-
-
         // setting information to election using recieved data by volley
         // set title text
         holder.title.text = election_info[p1].title
@@ -75,9 +66,6 @@ class ElectionCardAdapter (private val election_info:ArrayList<Election_info>): 
                     dialog.dismiss()
                 }
             }
-
-
-
         })
         // click handling on delete button
         holder.deleteButton.setOnClickListener(object : View.OnClickListener{
@@ -95,24 +83,8 @@ class ElectionCardAdapter (private val election_info:ArrayList<Election_info>): 
                     dialog.dismiss()
                 }
             }
-
-
-
         })
-
-
-
-
-
-
-
-
-
-
     }
-
-
-
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
        //initializing title
         val title: TextView = itemView.findViewById(R.id.election_title)
@@ -132,6 +104,5 @@ class ElectionCardAdapter (private val election_info:ArrayList<Election_info>): 
         val editButton:TextView=itemView.findViewById(R.id.edit)
         // delete Button
         val deleteButton:TextView=itemView.findViewById(R.id.delete)
-
     }
 }

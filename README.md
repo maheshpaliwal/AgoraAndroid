@@ -1,6 +1,5 @@
 # AgoraAndroid
 My prototype for agora android application using kotlin
-Given below are my UI mockups for Agora-vote android application.
 
 Through my app I have tried to maintain a seamless user experience thus maintaining consistency with the Agora-vote website. With close attention to detail, I have incorporated every functionality available on the website at users's fingertips including the design, color and gradient.  
 

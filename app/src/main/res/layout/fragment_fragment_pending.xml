@@ -4,7 +4,7 @@
              android:layout_width="match_parent"
              android:layout_height="match_parent"
              android:background="@drawable/gradient"
-             tools:context=".fragment_pending">
+             tools:context=".fragments.electionFragments.fragment_pending">
     <RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent">
 
     <android.support.v7.widget.RecyclerView android:layout_width="match_parent"

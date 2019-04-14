@@ -18,11 +18,10 @@ import kotlinx.android.synthetic.main.activity_main2.*
 
 import kotlinx.android.synthetic.main.app_bar_main2.*
 import android.widget.TextView
+import com.maheshpaliwal.agora_android.fragments.createElectionFragments.FragmentCreate
+import com.maheshpaliwal.agora_android.fragments.mainActivityFragments.*
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_mainapp.*
-import android.text.method.TextKeyListener.clear
-import android.content.SharedPreferences
-
 
 
 // Main Activity of agora vote contains navigation drawer & bottom navigation

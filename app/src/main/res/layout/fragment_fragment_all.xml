@@ -6,7 +6,7 @@
 
              android:background="@drawable/gradient"
             android:layout_marginBottom="50dp"
-             tools:context=".fragment_all">
+             tools:context=".fragments.electionFragments.fragment_all">
 <RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent">
     <android.support.v7.widget.RecyclerView android:layout_width="match_parent"
                                             android:layout_height="wrap_content"

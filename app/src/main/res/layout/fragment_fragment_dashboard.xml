@@ -5,7 +5,7 @@
              android:layout_height="match_parent"
           android:background="@drawable/gradient"
             android:layout_marginBottom="50dp"
-             tools:context=".FragmentDashboard">
+             tools:context=".fragments.mainActivityFragments.FragmentDashboard">
 
 
 

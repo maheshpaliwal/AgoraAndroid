@@ -24,6 +24,7 @@ import com.facebook.FacebookException
 import com.facebook.login.LoginResult
 import com.facebook.FacebookCallback
 import com.facebook.login.LoginManager
+import com.maheshpaliwal.agora_android.volley.VolleySingleton
 import java.util.*
 
 // Sign In activty

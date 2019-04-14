@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.*
 import com.android.volley.*
 import com.android.volley.toolbox.JsonObjectRequest
+import com.maheshpaliwal.agora_android.volley.VolleySingleton
 import org.json.JSONObject
 
 // Sign Up Activity

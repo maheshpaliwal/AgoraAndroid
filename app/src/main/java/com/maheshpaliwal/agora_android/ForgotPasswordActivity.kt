@@ -1,6 +1,5 @@
 package com.maheshpaliwal.agora_android
 
-import android.app.ProgressDialog
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
@@ -10,6 +9,7 @@ import com.android.volley.DefaultRetryPolicy
 import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.JsonObjectRequest
+import com.maheshpaliwal.agora_android.volley.VolleySingleton
 import org.json.JSONObject
 // Activity where user can reset his/her password
 
